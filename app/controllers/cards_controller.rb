@@ -29,7 +29,12 @@ class CardsController < ApplicationController
 
 	 	def edit
 	 	end
-
+    
+    def destroy
+    	card = current_user.cards.where(:id => params[:id])
+    	cards.delete
+    	redirect_to(cards_path)
+    end
 	 	
 
 	 

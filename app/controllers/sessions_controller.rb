@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 	  sign_out
-	  redirect_to home_root_path
+	  redirect_to '/'
 	end 
 end

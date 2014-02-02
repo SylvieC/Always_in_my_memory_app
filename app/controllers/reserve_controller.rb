@@ -1,2 +1,0 @@
-class ReserveController < ApplicationController
-end

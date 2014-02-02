@@ -7,8 +7,9 @@ AlwaysInMyMemory::Application.routes.draw do
   root to: "cards#index", as: :home
 
   get '/signup' => 'users#new'
-  delete '/signout', to: 'sessions#destroy', via: :delete
-  get'/signin' => 'sessions#new'
+  get '/signout', to: 'sessions#destroy', via: :delete
+  get'/signin', to: 'sessions#new'
+
 
  
   get "/cards/practice", to: 'cards#practice', as: :practice
