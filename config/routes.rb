@@ -1,19 +1,29 @@
 AlwaysInMyMemory::Application.routes.draw do
 
-  get "sessions/new"
-  get "sessions/destroy"
-  get "seesions/new"
-  get "seesions/destroy"
-  get "users/new"
-  get "users/show"
-  get "users/create"
+
+ 
+
   resources :cards,:users, :sessions
+  root to: "cards#home", as: :home_root
 
-  root to: "cards#home"
+  get '/signup' => 'users#new'
+  delete '/signout', to: 'sessions#destroy', via: :delete
+  get'/signin' => 'sessions#new'
 
-get '/signup' => 'users#new'
-delete '/signout', to: 'sessions#destroy'
-get'/signin' => 'sessions#new'
+ 
+  get "cards/practice", to: 'cards#practice', as: :practice
+   get "cards/show", to: 'cards#show'
+   put "/cards/:id", to: 'cards#update'
+  
+
+
+
+  
+  
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

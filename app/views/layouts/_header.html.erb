@@ -1,16 +1,16 @@
 <ul class="navbar">
-	<% if signed_in? %>
-		<div class = "container con-navbar-options">
-		  <div class="navbar-options"><%= link_to current_user.name, current_user %></div>
-		  <div class="navbar-options">
-		    <%= link_to "Sign out", signout_path, method: "delete" %>
-		  </div>
-		</div>
-	<% else %>
-		<div class = "container con-navbar-options">
-		  <div class="navbar-options"><%= link_to "Sign up", signup_path %></div>
-		  <div class="navbar-options"><%= link_to "Sign in", signin_path %></div>
-		</div>
-	<% end %>
+  <li><a href="/cards">Home</a>
+  <% if signed_in? %>
+    <div class = "container con-navbar-options">
+      <div class="navbar-options"><%= link_to current_user.name, current_user %></div>
+      <div class="navbar-options">
+        <%= link_to "Sign out", signout_path, method: "delete" %>
+      </div>
+    </div>
+  <% else %>
+    <div class = "container con-navbar-options">
+      <div class="navbar-options"><%= link_to "Sign up", signup_path %></div>
+      <div class="navbar-options"><%= link_to "Sign in", signin_path %></div>
+    </div>
+  <% end %>
 </ul>
-

@@ -1,2 +1,22 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="container">
+    <%= form_for @user, :html => {:class => "form-signin"} do |f| %>
+      <h2 class="form-sigin-heading"><span class="glyphicon glyphicon-user"></span>
+      </h2>
+
+      <% unless @user.errors.count == 0   %>
+        <div class="container alert alert-danger">
+          The form contains <%= pluralize(@user.errors.count, "error") %>.
+        <% @user.errors.full_messages.each do |msg| %>
+          <div><%= msg %></div>
+        <% end %>
+        </div>
+      <% end %>
+
+        <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
+        <%= f.text_field :email, class: "form-control", placeholder: "Email" %> 
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+        <%= f.submit "Create my account", class: "btn btn-large btn-primary btn-block" %>
+
+    <% end %>
+</div>

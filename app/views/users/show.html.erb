@@ -1,2 +1,20 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<% if signed_in? %>
+
+<div class="container">
+
+	<div class="webpage-name">Hello <%= current_user().name %>
+	</div>
+		
+
+	<p>You were successfully signed in</p>
+
+</div>
+
+<% end %>
+
+
+<div class="practice"><%= link_to "Let's Practice", practice_path %></div>
+
+
+
