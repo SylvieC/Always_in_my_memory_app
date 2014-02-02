@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyString
+  category: MyString
+  in_practice_pile?: false
+  in_reserve_pile?: false
+  in_already_learned_pile?: false
+  stack_id: 1
+
+two:
+  title: MyString
+  content: MyString
+  category: MyString
+  in_practice_pile?: false
+  in_reserve_pile?: false
+  in_already_learned_pile?: false
+  stack_id: 1
