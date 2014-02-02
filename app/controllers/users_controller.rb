@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 		new_user = params.require(:user).permit(:name, :email, :password, :password_confirmation)
 		@user=User.new(new_user)
 		if @user.save
-			flash[:sucess] = "Start shortening links!"
+			flash[:sucess] = "Welcome to Always In My Memory!"
 			sign_in @user
 			redirect_to @user
 		else
@@ -27,8 +27,10 @@ class UsersController < ApplicationController
 	def update
 	    @user = User.find(params[:id])
 	    @user.update_attributes(params[:user])
-	    render :show
+	    render :add
 
+	end
+	def add
 	end
 
 	

@@ -4,15 +4,16 @@ AlwaysInMyMemory::Application.routes.draw do
  
 
   resources :cards,:users, :sessions
-  root to: "cards#home", as: :home_root
+  root to: "cards#index", as: :home
 
   get '/signup' => 'users#new'
   delete '/signout', to: 'sessions#destroy', via: :delete
   get'/signin' => 'sessions#new'
 
  
-  get "cards/practice", to: 'cards#practice', as: :practice
-   get "cards/show", to: 'cards#show'
+  get "/cards/practice", to: 'cards#practice', as: :practice
+   get "/cards/show", to: 'cards#show'
+   get "/reserve", to: 'cards#reserve', as: :reserve
    put "/cards/:id", to: 'cards#update'
   
 

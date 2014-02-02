@@ -14,14 +14,23 @@ class CardsController < ApplicationController
 	 end
 
 	 def reserve
-	 	end
+	  end
 
 	 	def create
-	 		redirect_to reserve_path
+	 		redirect_to new_path
 	 	end
 
 	 	def show
+	 		@cards = Card.all
 	 	end
+
+	 	def new
+	 	end
+
+	 	def edit
+	 	end
+
+	 	
 
 	 
 
