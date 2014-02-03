@@ -6,14 +6,31 @@ class CardsController < ApplicationController
 	end
 
 	 def index
-	 	@cards = Card.all 
+
+	  if signed_in?
+	  	id = current_user.id
+	  	redirect_to user_path(id)
+	  end
 	 end
 
+
 	 def practice
-	 	@cards = Card.all 
+	 	@cards = Card.all
+	  @stacks = Stack.all 
+	 	@topics = Topic.all
+   
+
+	 
 	 end
 
 	 def reserve
+	 	@cards = Card.all
+	 	@stacks = Stack.all 
+	 	@topics = Topic.all
+	 	@reserve_stack = Stack.create()
+    @practice_stack = Stack.create(name:  "practice", times_viewed_today: 0)
+    @learned_stack = Stack.create(name: "learned", times_viewed_today: 0)
+
 	  end
 
 	 	def create
@@ -32,7 +49,7 @@ class CardsController < ApplicationController
 	 	end
 
 	 	def learned
-	 		
+
 	 	end
     
     def destroy

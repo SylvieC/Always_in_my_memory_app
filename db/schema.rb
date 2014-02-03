@@ -11,29 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202025904) do
+ActiveRecord::Schema.define(version: 20140203200629) do
 
   create_table "cards", force: true do |t|
     t.string   "title"
     t.string   "content"
-    t.string   "category"
-    t.boolean  "in_practice_pile?"
-    t.boolean  "in_reserve_pile?"
-    t.boolean  "in_already_learned_pile?"
-    t.integer  "stack_id"
+    t.boolean  "in_practice_pile?",        default: false
+    t.boolean  "in_reserve_pile?",         default: true
+    t.boolean  "in_already_learned_pile?", default: true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "stack_id"
+    t.integer  "topic_id"
   end
 
-  create_table "categories", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "cards", ["stack_id"], name: "index_cards_on_stack_id"
+  add_index "cards", ["topic_id"], name: "index_cards_on_topic_id"
 
   create_table "stacks", force: true do |t|
-    t.string   "type"
-    t.integer  "times_viewed_today"
+    t.string   "name",               default: "reserve"
+    t.integer  "times_viewed_today", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "topics", force: true do |t|
+    t.string   "name",       default: "general"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,9 +44,9 @@ ActiveRecord::Schema.define(version: 20140202025904) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
     t.string   "remember_token"
   end
 

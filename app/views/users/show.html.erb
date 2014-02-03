@@ -1,25 +1,28 @@
 
+
+	<%= render  partial: "layouts/header"%>
+<br><br><br>
 <% if signed_in? %>
 
 <div class="container">
 
-	<div class="webpage-name">Hello <%= current_user().name %>
+	<div>Hello <%= current_user().name %>
 	</div>
 
-	<p>You are successfully signed in</p>
+	<p>Let's get started</p>
 
 </div>
 
-<% end %>
+
+<%= link_to("Let's practice!", practice_path, :class => "btn btn-large btn-primary") %><br>
+<%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary"  ) %><br>
+(If your reserve pile is empty, please go to the reserve pile to add new cards<br>
+<%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary") %>
 
 
-<%= link_to("Let's practice!", practice_path) %>
-<%= link_to('Go to the reserve pile', reserve_path) %>
-(If your reserve pile is empty, please go to the reserve pile to add new cards
-<%= link_to('What you have already learned', learned_path) %>
 
  
-
+<% end %>
 
 
 
