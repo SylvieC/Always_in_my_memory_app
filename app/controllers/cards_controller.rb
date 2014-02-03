@@ -30,6 +30,10 @@ class CardsController < ApplicationController
 
 	 	def edit
 	 	end
+
+	 	def learned
+	 		
+	 	end
     
     def destroy
     	card = current_user.cards.where(:id => params[:id])

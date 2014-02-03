@@ -6,7 +6,7 @@
 	<div class="webpage-name">Hello <%= current_user().name %>
 	</div>
 
-	<p>You were successfully signed in</p>
+	<p>You are successfully signed in</p>
 
 </div>
 
@@ -16,6 +16,7 @@
 <%= link_to("Let's practice!", practice_path) %>
 <%= link_to('Go to the reserve pile', reserve_path) %>
 (If your reserve pile is empty, please go to the reserve pile to add new cards
+<%= link_to('What you have already learned', learned_path) %>
 
  
 
