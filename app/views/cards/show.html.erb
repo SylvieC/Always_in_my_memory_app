@@ -8,5 +8,11 @@ click on the card to see the other side<br>
 	<a href="/reserve">Go to the reserve pile</a>
 </div>
 
+<blockquote>
+    <p>&ldquo;<% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
+      <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> &rdquo;</p>
+                   
+   </blockquote>
+   
 
 	

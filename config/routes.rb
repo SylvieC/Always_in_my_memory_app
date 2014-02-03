@@ -11,9 +11,9 @@ AlwaysInMyMemory::Application.routes.draw do
   get'/signin', to: 'sessions#new'
 
 
- 
+  get "/cards/show", to: 'cards#show'
   get "/cards/practice", to: 'cards#practice', as: :practice
-   get "/cards/show", to: 'cards#show'
+  
    get "/reserve", to: 'cards#reserve', as: :reserve
    put "/cards/:id", to: 'cards#update'
   

@@ -6,6 +6,8 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+gem "net-http-persistent", "~> 2.9.1"
+
 gem 'pry', :group => :development
 
 # Use SCSS for stylesheets

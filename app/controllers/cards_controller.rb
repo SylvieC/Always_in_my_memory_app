@@ -22,6 +22,7 @@ class CardsController < ApplicationController
 
 	 	def show
 	 		@cards = Card.all
+	 		
 	 	end
 
 	 	def new
