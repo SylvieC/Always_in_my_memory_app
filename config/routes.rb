@@ -16,7 +16,10 @@ AlwaysInMyMemory::Application.routes.draw do
   get "/learned", to: 'cards#learned', as: :learned
   
    get "/reserve", to: 'cards#reserve', as: :reserve
-   put "/cards/:id", to: 'cards#update'
+   post "/reserve", to: 'cards#create'
+   post "/cards/:id", to: 'cards#update'
+
+
   
 
 

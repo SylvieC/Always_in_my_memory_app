@@ -1,55 +1,58 @@
 class CardsController < ApplicationController
 	
-	before_filter :signed_in_user, only: [:create, :new, :edit, :update]
+	 before_filter :signed_in_user, only: [:create, :new, :edit, :update]
 	 before_filter :check_book_owner, only: []
 	def home 
 	end
 
 	 def index
-
-	  if signed_in?
+     if signed_in?
 	  	id = current_user.id
 	  	redirect_to user_path(id)
-	  end
+	   end
+	   	@reserve_stack = Stack.create()
+      @practice_stack = Stack.create(name:  "practice", times_viewed_today: 0)
+      @learned_stack = Stack.create(name: "learned", times_viewed_today: 0)
 	 end
 
 
-	 def practice
+	def practice
 	 	@cards = Card.all
 	  @stacks = Stack.all 
 	 	@topics = Topic.all
-   
+  end
 
-	 
-	 end
-
-	 def reserve
+	def reserve
 	 	@cards = Card.all
 	 	@stacks = Stack.all 
 	 	@topics = Topic.all
-	 	@reserve_stack = Stack.create()
-    @practice_stack = Stack.create(name:  "practice", times_viewed_today: 0)
-    @learned_stack = Stack.create(name: "learned", times_viewed_today: 0)
 
-	  end
+  end
 
-	 	def create
-	 		redirect_to new_path
-	 	end
+	 
 
-	 	def show
+	 def new
+        @card = Card.new
+   end
+
+   def create
+   	   	 
+	 		 new_card = params.require(:card).permit(:title, :content)
+       @card =  Card.create(new_card)
+       @reserve_stack = Stack.find(1)
+       @reserve_stack.cards << @card
+
+       redirect_to reserve_path
+	 end
+    
+   def show
 	 		@cards = Card.all
-	 		
-	 	end
+	 end
 
-	 	def new
-	 	end
-
-	 	def edit
-	 	end
+   def edit
+	 end
 
 	 	def learned
-
 	 	end
     
     def destroy
@@ -58,7 +61,4 @@ class CardsController < ApplicationController
     	redirect_to(cards_path)
     end
 	 	
-
-	 
-
 end
