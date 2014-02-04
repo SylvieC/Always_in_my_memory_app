@@ -33,7 +33,7 @@ Add the cards you want to add <br>
      <div class="title col.sm.12">
       <h3>Cards in the Reserve Pile</h3>
      </div>
-   	 <% @cards.each do |card| %>
+   	 <% Stack.find(1).cards.each do |card| %>
 
 
         <div class="row">
@@ -59,7 +59,7 @@ Add the cards you want to add <br>
 
 
 
-<!-- Forms to create 1 card at once --> 
+<!-- Forms to create 1 card  --> 
 
 <div class="container reserve_form">
 	<div class="row">
