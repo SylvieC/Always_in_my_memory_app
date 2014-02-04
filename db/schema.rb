@@ -16,9 +16,6 @@ ActiveRecord::Schema.define(version: 20140203200629) do
   create_table "cards", force: true do |t|
     t.string   "title"
     t.string   "content"
-    t.boolean  "in_practice_pile?",        default: false
-    t.boolean  "in_reserve_pile?",         default: true
-    t.boolean  "in_already_learned_pile?", default: true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "stack_id"

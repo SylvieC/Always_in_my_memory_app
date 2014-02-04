@@ -20,6 +20,9 @@ class CardsController < ApplicationController
 	 	@cards = Card.all
 	  @stacks = Stack.all 
 	 	@topics = Topic.all
+	 	practice_stack = Card.find(2).cards
+	 	reserve_stack = Card.fin(1).cards
+
   end
 
 	def reserve
@@ -39,8 +42,9 @@ class CardsController < ApplicationController
    	   	 
 	 		 new_card = params.require(:card).permit(:title, :content)
        @card =  Card.create(new_card)
-       @reserve_stack = Stack.find(1)
-       @reserve_stack.cards << @card
+       @reserve_stack_of_cards = Stack.find(1).cards
+       @reserve_stack_of_cards << @card
+       length_reserve_stack = @reser
 
        redirect_to reserve_path
 	 end
@@ -60,5 +64,11 @@ class CardsController < ApplicationController
     	cards.delete
     	redirect_to(cards_path)
     end
+
+    def make_card_change_stack(original_stack, final_stack, number_of_elements)
+    	  number_of_elements.to_i.times  do
+    	  final_stack.push(original_stack.shift())
+    	end
+   end
 	 	
 end
