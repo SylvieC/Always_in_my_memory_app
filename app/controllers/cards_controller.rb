@@ -3,6 +3,9 @@ class CardsController < ApplicationController
 	 before_filter :signed_in_user, only: [:create, :new, :edit, :update]
 	 before_filter :check_book_owner, only: []
 
+	 @@day = 0
+	 @@view = 0
+
 	def home 
 	end
 
@@ -21,15 +24,21 @@ class CardsController < ApplicationController
 	 	@cards = Card.all
 	  @stacks = Stack.all 
 	 	@topics = Topic.all
-	 	update_practice_pile = false
-	 	if update_practice_pile
+	 	# fill the practice pile take enough cards from the reserve pile to make it 5 cards
+	  if Stack.find(2).cards.length < 5
 	 		direct_the_flow_of_cards_to_practice_pile()
 	 	end
-	end
+    
+    # after 5 days, after the practice pile has been viewed 3 times, the top card is transferred to the a
+    # already learned pile
+    if @@view == 3 && @@day >= 5
+    	transfer_first_card_from_practice_pile_to_reserve_pile()
+    	@@view = 0
+    	@@day += 1
+    end
+  end
 
-
-
-	def reserve
+  def reserve
 	 	@cards = Card.all
 	 	@stacks = Stack.all 
 	 	@topics = Topic.all
@@ -52,9 +61,7 @@ class CardsController < ApplicationController
  end
     
    def show
-   
-
-	 end
+   end
 
    def edit
 	 end
@@ -87,6 +94,9 @@ class CardsController < ApplicationController
     				put_the_top_card_of_reserve_card_in_last_position_in_practice_pile()
     			end
     		end
+    end
+
+    def manage_practice_which_days()
     end
 	 	
 end
