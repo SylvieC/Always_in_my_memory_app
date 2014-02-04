@@ -1,0 +1,18 @@
+<%= render partial: 'layouts/header'%><br><br>
+<div class="container">
+<h1>Let's practice</h1>
+
+click on the card to see the other side<br>
+ I need to add something about adding cards in the reserve when they are empty if the reserve is empty, you need to fill it </br>
+
+	<a href="/reserve">Go to the reserve pile</a><br>
+	<a href="/learned">Already memorized</a>
+
+</div>
+
+<blockquote>
+    <p>&ldquo;<% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
+      <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> &rdquo;</p>
+                   
+   </blockquote>
+   

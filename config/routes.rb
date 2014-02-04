@@ -12,7 +12,7 @@ AlwaysInMyMemory::Application.routes.draw do
 
 
   get "/cards/show", to: 'cards#show', as: :show
-  get "/cards/practice", to: 'cards#practice', as: :practice
+  get "/practice", to: 'cards#practice', as: :practice
   get "/learned", to: 'cards#learned', as: :learned
   
    get "/reserve", to: 'cards#reserve', as: :reserve

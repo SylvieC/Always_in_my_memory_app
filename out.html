@@ -1,0 +1,67 @@
+diff --git a/app/controllers/cards_controller.rb b/app/controllers/cards_controller.rb
+index 570f0a3..3c688f0 100644
+--- a/app/controllers/cards_controller.rb
++++ b/app/controllers/cards_controller.rb
+@@ -20,6 +20,9 @@ class CardsController < ApplicationController
+ 	 	@cards = Card.all
+ 	  @stacks = Stack.all 
+ 	 	@topics = Topic.all
++	 	practice_stack = Card.find(2).cards
++	 	reserve_stack = Card.fin(1).cards
++
+   end
+ 
+ 	def reserve
+@@ -39,8 +42,9 @@ class CardsController < ApplicationController
+    	   	 
+ 	 		 new_card = params.require(:card).permit(:title, :content)
+        @card =  Card.create(new_card)
+-       @reserve_stack = Stack.find(1)
+-       @reserve_stack.cards << @card
++       @reserve_stack_of_cards = Stack.find(1).cards
++       @reserve_stack_of_cards << @card
++       length_reserve_stack = @reser
+ 
+        redirect_to reserve_path
+ 	 end
+@@ -60,5 +64,11 @@ class CardsController < ApplicationController
+     	cards.delete
+     	redirect_to(cards_path)
+     end
++
++    def make_card_change_stack(original_stack, final_stack, number_of_elements)
++    	  number_of_elements.to_i.times  do
++    	  final_stack.push(original_stack.shift())
++    	end
++   end
+ 	 	
+ end
+diff --git a/db/migrate/20140202024830_create_cards.rb b/db/migrate/20140202024830_create_cards.rb
+index 8ab4675..62a2ab0 100644
+--- a/db/migrate/20140202024830_create_cards.rb
++++ b/db/migrate/20140202024830_create_cards.rb
+@@ -3,10 +3,6 @@ class CreateCards < ActiveRecord::Migration
+     create_table :cards do |t|
+       t.string :title
+       t.string :content
+-      t.boolean :in_practice_pile?, default: false
+-      t.boolean :in_reserve_pile?, default: true
+-      t.boolean :in_already_learned_pile?, default: true
+-
+       t.timestamps
+     end
+   end
+diff --git a/db/schema.rb b/db/schema.rb
+index 16e13df..8fa7ae1 100644
+--- a/db/schema.rb
++++ b/db/schema.rb
+@@ -16,9 +16,6 @@ ActiveRecord::Schema.define(version: 20140203200629) do
+   create_table "cards", force: true do |t|
+     t.string   "title"
+     t.string   "content"
+-    t.boolean  "in_practice_pile?",        default: false
+-    t.boolean  "in_reserve_pile?",         default: true
+-    t.boolean  "in_already_learned_pile?", default: true
+     t.datetime "created_at"
+     t.datetime "updated_at"
+     t.integer  "stack_id"
