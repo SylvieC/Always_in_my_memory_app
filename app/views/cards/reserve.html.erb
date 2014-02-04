@@ -64,24 +64,28 @@ Add the cards you want to add <br>
 
 <!-- Forms to create 1 card  --> 
 
-<div class="container reserve_form">
-	<div class="row">
-		<div class="col-sm-12 col-md-6">
+
+	
 			<%= form_for :card do |f| %>
+  <div class="container reserve_form">
+      <div class="row">
+    <div class="col-sm-12 col-md-6">
       <%= f.label :'front of card' %>
       <%= f.text_area :title %>
     </div>
     <div class="col-sm-12 col-md-6">
      	<%= f.label :'back of card' %>:
       <%= f.text_area :content %>
+    </div>
+  </div>
+</div>
   
      <%= f.submit %> 
-   </div>
+ 
   <p>add a javascript function here when card has been submitted</p>s
 
 <% end %>
- </div>
- </div>
+
 
  <div class="push_up">
 

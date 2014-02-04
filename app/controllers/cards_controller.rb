@@ -24,12 +24,12 @@ class CardsController < ApplicationController
 	 	@cards = Card.all
 	  @stacks = Stack.all 
 	 	@topics = Topic.all
-	 	# fill the practice pile take enough cards from the reserve pile to make it 5 cards
+	 	# fill the practice pile taking enough cards from the reserve pile to make it 5 cards
 	  if Stack.find(2).cards.length < 5
 	 		direct_the_flow_of_cards_to_practice_pile()
 	 	end
     
-    # after 5 days, after the practice pile has been viewed 3 times, the top card is transferred to the a
+    # after 5 days, after the practice pile has been viewed 3 times, the top card is transferred to the 
     # already learned pile
     if @@view == 3 && @@day >= 5
     	transfer_first_card_from_practice_pile_to_reserve_pile()
@@ -96,7 +96,10 @@ class CardsController < ApplicationController
     		end
     end
 
-    def manage_practice_which_days()
+    def 	transfer_first_card_from_practice_pile_to_reserve_pile()
+    	card_to_move = (Stack.find(2).cards)[0]
+   	  Stack.find(2).cards.delete(card_to_move)
+      Stack.find(3).cards << card_to_move
     end
 	 	
 end
