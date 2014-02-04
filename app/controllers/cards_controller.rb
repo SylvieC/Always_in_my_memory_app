@@ -17,12 +17,18 @@ class CardsController < ApplicationController
 
 
 	def practice
-	 	@cards = Card.all
+	 	@cards = Card.allI
 	  @stacks = Stack.all 
 	 	@topics = Topic.all
-	 	practice_stack = Card.find(2).cards
-	 	reserve_stack = Card.fin(1).cards
+	 	update_practice_pile = false
+	 	if update_practice_pile
+	 		direct_the_flow_of_cards_to_practice_pile()
+	 	end
+	 end
 
+
+
+	
   end
 
 	def reserve
@@ -44,7 +50,9 @@ class CardsController < ApplicationController
        @card =  Card.create(new_card)
        @reserve_stack_of_cards = Stack.find(1).cards
        @reserve_stack_of_cards << @card
-       length_reserve_stack = @reser
+
+
+      
 
        redirect_to reserve_path
 	 end
@@ -65,10 +73,20 @@ class CardsController < ApplicationController
     	redirect_to(cards_path)
     end
 
-    def make_card_change_stack(original_stack, final_stack, number_of_elements)
-    	  number_of_elements.to_i.times  do
-    	  final_stack.push(original_stack.shift())
+   def put_the_top_card_of_reserve_card_in_last_position_in_practice_pile()
+      card_to_move = (Stack.find(1).cards)[0]
+   	  Stack.find(1).cards.delete(card_to_move)
+      Stack.find(2).cards << card_to_move
+    end
+
+    def direct_the_flow_of_cards_to_practice_pile()
+    	practice_stack = Stack.find(2)
+    	if practice_stack.cards.length > 5
     	end
-   end
+    end
+
+
+
+ 
 	 	
 end

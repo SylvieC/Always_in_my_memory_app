@@ -4,14 +4,17 @@
 	<br><br><br>
 
  <!-- Navigation to other pages -->
+
+ <%= link_to("Let's practice!", practice_path, :class => "btn btn-large btn-primary") %><br>
+
+<%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary") %>
+
 	<div class="container">
 
 
 <h1>This is the Reserve pile of cards</h1>
 Add the cards you want to add <br>
 
-<a href="/cards">back to the home page</a><br>
-<a href="/learned">Go to the cards already memorized</a>
 </div>
 
 <!-- Show the List of Cards in Reserve pile -->
@@ -33,7 +36,7 @@ Add the cards you want to add <br>
      <div class="title col.sm.12">
       <h3>Cards in the Reserve Pile</h3>
      </div>
-   	 <% @cards.each do |card| %>
+   	 <% Stack.find(1).cards.each do |card| %>
 
 
         <div class="row">
