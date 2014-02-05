@@ -8,6 +8,8 @@ gem 'sqlite3'
 
 gem "net-http-persistent", "~> 2.9.1"
 
+gem "gon"
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

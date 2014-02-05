@@ -5,6 +5,8 @@ class CardsController < ApplicationController
 
 	 @@day = 0
 	 @@view = 0
+  # gon.view = @@view
+
 
 	def home 
 	end
@@ -24,6 +26,12 @@ class CardsController < ApplicationController
 	 	@cards = Card.all
 	  @stacks = Stack.all 
 	 	@topics = Topic.all
+
+    # make the stacks available to js via gon
+    gon.practice_stack = Stack.find(2).cards
+    gon.reserve_stack = Stack.find(1).cards
+    gon.learned_stack = Stack.find(3).cards
+
 	 	# fill the practice pile taking enough cards from the reserve pile to make it 5 cards
 	  if Stack.find(2).cards.length < 5
 	 		direct_the_flow_of_cards_to_practice_pile()
