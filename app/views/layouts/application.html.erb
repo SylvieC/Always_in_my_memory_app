@@ -4,28 +4,28 @@
     <title>Memory</title>
  
      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
    <!-- App-like mobile view -->
                  <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, user-scalable=no"/>
                  
+                <!-- Jquery -->
+                <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
                  <!-- Normalize -->
                  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-
+ 
                  <!-- Boostrap core CSS -->
                  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" type="text/css">
 
                  <!-- Bootstrap styling CSS -->
                  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" type="text/css">
 
-                 <!-- Local styling -->
-                 <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-
-                 <!-- Jquery -->
-                 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-                
                 <!-- Bootstrap JS -->
-                 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <%= csrf_meta_tags %>
+                <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+ 
+
+                <%= javascript_include_tag "application" %>
+                <%= csrf_meta_tags %>
     <!-- 
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
     <link href='http://fonts.googleapis.com/css?family=Overlock|Offside|Supermercado+One|Medula+One|Aubrey' rel='stylesheet' type='text/css'> -->
