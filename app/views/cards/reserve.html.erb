@@ -1,64 +1,64 @@
-
-
 	<%= render partial: 'layouts/header'%>
 	<br><br><br>
 
  <!-- Navigation to other pages -->
 
- <%= link_to("Let's practice!", practice_path, :class => "btn btn-large btn-primary") %><br>
+ <%= link_to("Let's practice!", practice_path, :class => "btn btn-large btn-primary") %><br/><br/>
 
-<%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary") %>
+ <%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary") %>
 
-	<div class="container">
+ <div class="container">
 
 
-<h1>This is the Reserve pile of cards</h1>
-Add the cards you want to add <br>
-
+  <h1>This is the Reserve pile of cards</h1>
+  <p>Add the cards you want to add.</p>
 </div>
 
 <!-- Show the List of Cards in Reserve pile -->
-   <div class="container">
-    <% if Stack.find(1).cards.empty? %>
-      <div class="container empty">
-        <div class="row col-sm-12">
-        <h4>The reserve pile is empty, please add more cards</h4>
-      
-        </div>
+<div class="container">
+  <% if Stack.find(1).cards.empty? %>
+  <div class="container empty">
+    <div class="row col-sm-12">
+      <h4>The reserve pile is empty, please add more cards</h4>
+    </div>
+  </div>
+  <% else %>
+  <div class="container">
+    <div class="row col-sm-12">
+      <div class="well">
+        <p>There are <%= Stack.find(1).cards.length %> cards left in the reserve pile</p>
       </div>
-      <% else %>
-      <div class="container">
-     <div class="row col-sm-12">
-      <div class="well"><p>There are <%= Stack.find(1).cards.length %> cards left in the reserve pile</p>
-   </div>
- </div>
+    </div>
+  </div>
+  <div class="title col.sm.12">
+    <h3>Cards in the Reserve Pile</h3>
+  </div>
+  <% end %>
 </div>
-     <div class="title col.sm.12">
-      <h3>Cards in the Reserve Pile</h3>
-     </div>
-   	 <% Stack.find(1).cards.each do |card| %>
+
+<% Stack.find(1).cards.each do |card| %>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="well">
+      <%= card.title %>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="well">
+      <%= card.content %>
+    </div>
+  </div>
+  <div class="clearfix hidden-md hidden-lg">
+  </div>
+</div>
+<hr/>
+<% end %>
 
 
-        <div class="row">
-            <div class="col-xs-6">
-               
-                <div class="well"><%= card.title %></div>
-            </div>
-             
-            <div class="col-xs-6">
-                <div class="well"><%= card.content %></div>
-            </div>
-              <div class="clearfix hidden-md hidden-lg"></div>
-          </div>
-          <hr>
-        </div>
-         
-            
-            
-      
-        <% end %>
-      <% end %>
-   
+
+
+
+
 
 
 
@@ -66,31 +66,31 @@ Add the cards you want to add <br>
 <!-- Forms to create 1 card  --> 
 
 
-	
-			<%= form_for :card do |f| %>
-  <div class="container reserve_form">
-      <div class="row">
+
+<%= form_for :card do |f| %>
+<div class="container reserve_form">
+  <div class="row">
     <div class="col-sm-12 col-md-6">
       <%= f.label :'front of card' %>
       <%= f.text_area :title %>
     </div>
     <div class="col-sm-12 col-md-6">
-     	<%= f.label :'back of card' %>:
+      <%= f.label :'back of card' %>:
       <%= f.text_area :content %>
     </div>
   </div>
 </div>
-  
-     <%= f.submit %> 
- 
-  <p>add a javascript function here when card has been submitted</p>s
+
+<%= f.submit %> 
+
+<p>add a javascript function here when card has been submitted</p>s
 
 <% end %>
 
 
- <div class="push_up">
+<div class="push_up">
 
- </div>
+</div>
 
 
 

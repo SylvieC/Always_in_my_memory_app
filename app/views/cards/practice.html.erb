@@ -1,22 +1,39 @@
 <%= render partial: 'layouts/header'%><br><br>
 <div class="container">
-<h1>Let's practice</h1>
+  <h1>Let's practice</h1>
 
-click on the card to see the other side<br>
- I need to add something about adding cards in the reserve when they are empty if the reserve is empty, you need to fill it </br>
+  <p><em>click on the card to see the other side</em></p>
 
-<%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary"  ) %><br>
-(If your reserve pile is empty, please go to the reserve pile to add new cards<br>
-<%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary") %>
+  <div class="container">
+    <div class="row col-sm-6">
+      <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary") %></div>
+    <div class="title col.sm.12">
+    <%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary") %>
+      </div>
+</div>
+<br/></br>
+<!-- show cards -->
+<% Stack.find(2).cards.each do |card| %>
+<div class="row">
+  <div class="col-xs-6">
+   <div data-card="<%= card.id %>" class="well front"><%= card.title %></div>
+ </div>
 
+ <div class="col-xs-6">
+   <div id="<%= card.id %>" class="well answer"><%= card.content %></div>
+ </div>
+ <div class="clearfix hidden-md hidden-lg"></div>
+</div>
+<hr/>
+
+<%end%>
+
+<!-- if the practice pile has less than 5 cards, ask the user to add cards into the reserve pile -->
+<div class="col-sm-12 well">
+  <% if Stack.find(2).cards.length < 5 %>
+  <p> You need to add cards to your reserve pile, to make this pile have 5 cards </p>
+  <% end %>
 </div>
 
-
-
 <!-- random quote -->
-<blockquote>
-    <p>&ldquo;<% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
-      <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> &rdquo;</p>
-                   
-   </blockquote>
-   
+

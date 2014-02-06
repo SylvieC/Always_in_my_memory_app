@@ -1,6 +1,6 @@
 
 
-	<%= render  partial: "layouts/header"%>
+<%= render  partial: "layouts/header"%>
 <br><br><br>
 <% if signed_in? %>
 
@@ -26,13 +26,13 @@
             </div>
             <div class="col-xs-9">
                 <h1>It's here to stay<span class="text-muted">&raquo; An easy and systematic way to learn, a little bit everyday</span></h1>
-                <p class="lead">The best way to learn is a little bit at a time.<br> View your cards 3 times a day. After 5 days what you learned will be in your memory forever<br>Just paste or type the contents of the cards and the flow of cards will be done for you
+                <p class="lead">The best way to learn is a little bit at a time.<br> View your cards 3 times a day. After 5 days what you learned will be in your memory forever
                 </p>
             </div>
         </div>
     </div>    
 </div>
- <!-- Explanation of the piles -->
+<!-- Explanation of the piles -->
 
 <div class="container padded">
     <div class="row">
@@ -44,23 +44,24 @@
             <h3>Practice pile</h3>
             <p>The pile you view three times a day, consists of <strong>5</strong> cards<br>It will be the same for the first 5 days but after that, everyday, one card will be taken out and replaced by a new card. The card taken out will be taken from the reserve pile and will go to the "I know this" pile, </p>
 
-            <p><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p>        </div>
-        <div class="col-xs-12 col-sm-4">
-            <img class="img-circle img-responsive" src="/assets/flashcard-machine.jpg">
-            <h3>Reserve pile</h3>
-            <p>Where you put the "cards" you want to learn, they will automatically go to the Practice pile when needed</p>
-            <p><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary"  ) %></p>
+            <p><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p> 
         </div>
-        <div class="clearfix hidden-md hidden-lg"></div>
-        <div class="col-xs-12 col-sm-4">
-            <img class="img-circle img-responsive" src="/assets/pile_of_flashcards.jpeg">
-            <h3>"I know it" pile</h3>
-            <p>"Cards" you have already learned. You can go back to them for your information</p>
-            <p><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-primary") %></p>
+            <div class="col-xs-12 col-sm-4">
+                <img class="img-circle img-responsive" src="/assets/flashcard-machine.jpg">
+                <h3>Reserve pile</h3>
+                <p>Where you put the "cards" you want to learn, they will automatically go to the Practice pile when needed. Copy paste or write the back and front contents and build the pile. The flow of cards will happen automatically</p>
+                <p><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary"  ) %></p>
+            </div>
+            <div class="clearfix hidden-md hidden-lg"></div>
+            <div class="col-xs-12 col-sm-4">
+                <img class="img-circle img-responsive" src="/assets/pile_of_flashcards.jpeg">
+                <h3>"I know it" pile</h3>
+                <p>"Cards" you have already learned</p>
+                <p><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-primary") %></p>
+            </div>
+
         </div>
-       
-    </div>
-</div>    
+    </div>    
 
 
 

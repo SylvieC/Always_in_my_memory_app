@@ -20,7 +20,7 @@ AlwaysInMyMemory::Application.routes.draw do
    post "/reserve", to: 'cards#create'
    post "/cards/:id", to: 'cards#update'
 
-
+   post "/practice", to: "cards#viewed_stack"
   
 
 
