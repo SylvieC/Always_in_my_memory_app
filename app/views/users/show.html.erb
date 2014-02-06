@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-3">
-                <img class="img-responsive tpad" src="/assets/person_writing.jpeg">
+                <%= image_tag('person_writing.jpeg', class: 'img-circle img-responsive') %>
             </div>
             <div class="col-xs-9">
                 <h1>It's here to stay <span class="text-muted">&raquo; An easy and systematic way to learn, a little bit everyday</span></h1>
@@ -47,14 +47,16 @@
             <p><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p> 
         </div>
             <div class="col-xs-12 col-sm-4">
-                <img class="img-circle img-responsive" src="/assets/flashcard-machine.jpg">
+                <%= image_tag('flashcard-machine.jpg', class: 'img-circle img-responsive') %>
+            
                 <h3>Reserve pile</h3>
                 <p>Where you put the "cards" you want to learn, they will automatically go to the Practice pile when needed. Copy paste or write the back and front contents and build the pile. The flow of cards will happen automatically</p>
                 <p><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary"  ) %></p>
             </div>
             <div class="clearfix hidden-md hidden-lg"></div>
             <div class="col-xs-12 col-sm-4">
-                <img class="img-circle img-responsive" src="/assets/pile_of_flashcards.jpeg">
+                <%= image_tag('pile_of_flashcards.jpeg', class: 'img-circle img-responsive') %>
+               
                 <h3>"I know it" pile</h3>
                 <p>"Cards" you have already learned</p>
                 <p><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-primary") %></p>
