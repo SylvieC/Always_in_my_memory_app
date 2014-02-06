@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140203200629) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cards", force: true do |t|
     t.string   "title"
     t.string   "content"
@@ -22,14 +25,37 @@ ActiveRecord::Schema.define(version: 20140203200629) do
     t.integer  "topic_id"
   end
 
-  add_index "cards", ["stack_id"], name: "index_cards_on_stack_id"
-  add_index "cards", ["topic_id"], name: "index_cards_on_topic_id"
+  add_index "cards", ["stack_id"], name: "index_cards_on_stack_id", using: :btree
+  add_index "cards", ["topic_id"], name: "index_cards_on_topic_id", using: :btree
+
+  create_table "categories", force: true do |t|
+    t.text "name"
+  end
+
+  create_table "product_copies", force: true do |t|
+    t.integer "product_id"
+    t.integer "description_id"
+  end
+
+  create_table "products_categories", force: true do |t|
+    t.integer "id1"
+    t.integer "id2"
+  end
 
   create_table "stacks", force: true do |t|
     t.string   "name",               default: "reserve"
     t.integer  "times_viewed_today", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "students", force: true do |t|
+    t.string  "family_name"
+    t.string  "given_name"
+    t.integer "table_id"
+  end
+
+  create_table "tables", force: true do |t|
   end
 
   create_table "topics", force: true do |t|
@@ -47,6 +73,6 @@ ActiveRecord::Schema.define(version: 20140203200629) do
     t.string   "remember_token"
   end
 
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

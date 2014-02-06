@@ -34,10 +34,12 @@ $(window).load(function(){
         view += 1;
       }
 
+ 
+     
   //if the practice stack has less than 5 cards, add cards
      if (practice_stack.length < 5)
      {
-        direct_the_flow_of_cards_to_practice_pile();
+        fill_practice_pile_from_reserve_pile();
     }
 
     
@@ -46,10 +48,10 @@ $(window).load(function(){
    //  // everytime the stack is viewed, the variable view is incremented by
    //  //1 , after 3 views of a stack, the stack is updated, but taking out a 
    // // the first card of the stack
-   //    if (view % 3 === 0 && day >=5 ){
-   //      transfer_first_card_from_practice_pile_to_reserve_pile();
-   //      day += 1;
-   //      } 
+      if (view % 3 === 0 && day >=5 ){
+        transfer_top_card_from_practice_pile_to_already_learned_pile();
+        day += 1;
+        } 
      });
   });
 
@@ -78,9 +80,3 @@ function transfer_top_card_from_practice_pile_to_already_learned_pile()
     card_to_move.stack_id = 3;
     learned_stack.push(card_to_move);
   };
-
-
-  
-
-
-
