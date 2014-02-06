@@ -3,6 +3,7 @@ AlwaysInMyMemory::Application.routes.draw do
 
  
 
+  get "views/value:integer"
   resources :cards,:users, :sessions
   root to: "cards#index", as: :home
 
