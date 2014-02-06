@@ -55,8 +55,10 @@ class CardsController < ApplicationController
   end 
    
  def viewed_stack
-   View.find(1).value += 1
-
+   view = View.find(1)
+   view.value += 1
+   view.save
+   render nothing: true, status: 201
  end
    
   
@@ -93,9 +95,9 @@ class CardsController < ApplicationController
 	 	end
     
     def destroy
-    	card = current_user.cards.where(:id => params[:id])
-    	cards.delete
-    	redirect_to(cards_path)
+    	card = Stack.find(2).card.where(:id => params[:id])
+    	card.delete
+    	redirect_to practice_path
     end
 
   def  move_card_from_top_of_reserve_pile_to_practice_pile()
