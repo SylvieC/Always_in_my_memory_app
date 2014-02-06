@@ -18,7 +18,6 @@ class CardsController < ApplicationController
     @practice_stack = Stack.create(name:  "practice", times_viewed_today: 0)
     @learned_stack = Stack.create(name: "learned", times_viewed_today: 0)
     View.create(value: 0)
-
  end
 
 
@@ -28,17 +27,13 @@ class CardsController < ApplicationController
 	 	@topics = Topic.all
 
     # make the stacks available to js via gon
-    gon.practice_stack = Stack.find(2).cards
-    gon.reserve_stack = Stack.find(1).cards
-    gon.learned_stack = Stack.find(3).cards
+    
     gon.length = Stack.find(2).cards.length
-    gon.views = View.find(1).value
-    views = View.find(1).value
     view = View.find(1).value
     day = 1 + view / 3
 
     # fill the practice pile with cards from the reserve pile if needed
-    if (Stack.find(2).cards.length < 5) && (Stack.find(1).cards.length >= (5 - Stack.find(2).cards.length) )
+    if (Stack.find(2).cards.length < 5)
        while (Stack.find(2).cards.length) < 5 && (Stack.find(1).cards.length > 0 )
           move_card_from_top_of_reserve_pile_to_practice_pile()
        end
@@ -95,9 +90,10 @@ class CardsController < ApplicationController
 	 	end
     
     def destroy
-    	card = Stack.find(2).card.where(:id => params[:id])
+      id = params[:id]
+    	card = Card.find(id)
     	card.delete
-    	redirect_to practice_path
+    	redirect_to reserve_path
     end
 
   def  move_card_from_top_of_reserve_pile_to_practice_pile()

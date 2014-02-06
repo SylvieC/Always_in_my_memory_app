@@ -21,6 +21,7 @@ AlwaysInMyMemory::Application.routes.draw do
    post "/cards/:id", to: 'cards#update'
 
    post "/practice", to: "cards#viewed_stack"
+   
   
 
 
