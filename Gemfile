@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 gem "net-http-persistent", "~> 2.9.1"
 
@@ -51,7 +51,9 @@ group :development do
  gem 'pry-byebug'
  gem 'pry-rails'
 
+
 end
+gem 'rails_12factor', group: :production
 
 
 
