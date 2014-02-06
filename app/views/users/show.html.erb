@@ -1,11 +1,13 @@
 
 
 <%= render  partial: "layouts/header"%>
-<br><br><br>
+<br><br><br><br>
+
+
 <% if signed_in? %>
 
-<div class="container">
 
+  <div class="container">
 	<div class="title">Hello <%= current_user().name %>
 	</div>
 
@@ -47,7 +49,7 @@
             <p><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p> 
         </div>
             <div class="col-xs-12 col-sm-4">
-                <%= image_tag('flashcard-machine.jpg', class: 'img-circle img-responsive') %>
+                <%= image_tag('study-spanish-flash-cards.jpg', class: 'img-circle img-responsive flashcard') %>
             
                 <h3>Reserve pile</h3>
                 <p>Where you put the "cards" you want to learn, they will automatically go to the Practice pile when needed. Copy paste or write the back and front contents and build the pile. The flow of cards will happen automatically</p>

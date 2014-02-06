@@ -3,7 +3,6 @@
   <h1>Let's practice</h1>
 
   <%= form_for :practice, url: "/practice", method: "post", html: {id: "count_form"} do |f| %>
-     <%= f.submit %>
   <% end %>
  
 
@@ -21,11 +20,11 @@
 <div class="row">
   
   <div class="col-xs-6">
-   <div data-card="<%= card.id %>" class="well front"><%= card.title %></div>
+   <div data-card="<%= card.id %>" class="front"><%= card.title %></div>
  </div>
 
  <div class="col-xs-6">
-   <div id="<%= card.id %>" class=" answer"><%= card.content %></div>
+   <div id="<%= card.id %>" class="answer"><%= card.content %></div>
  </div>
 
 
@@ -37,18 +36,21 @@
 <%end%>
 
 <!-- if the practice pile has less than 5 cards, ask the user to add cards into the reserve pile -->
-<div class="col-sm-12 well">
+<div class="col-sm-12">
   <% if Stack.find(2).cards.length < 5 %>
   <p> You need to add cards to your reserve pile, to make this pile have 5 cards </p>
   <% end %>
 </div>
 
 <!-- random quote -->
-<div class="quote">
-<blockquote>
+
+
+
+<blockquote class="quote">
+  <small><em>Special Quote</small>
     <p>&ldquo;<% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
       <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> &rdquo;</p>
                    
    </blockquote>
- </div>
+
 

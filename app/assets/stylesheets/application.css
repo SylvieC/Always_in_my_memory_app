@@ -1,3 +1,51 @@
+div.front{
+
+background-color: #FFD414;
+
+}
+div.answer{
+    background-color: #00FFFF;
+   ; 
+           
+}
+div .front, .answer {
+-moz-box-shadow: 10px 10px 37px #000000;
+-webkit-box-shadow: 10px 10px 37px #000000;
+box-shadow: 10px 10px 37px #000000;
+border: solid black 1px;
+border-radius: 10px;
+height: 80px;
+padding: 10px;
+text-align: center;
+font-family: 'Artifika', serif;
+font-size: 20px;
+padding-top: 20px;
+
+}
+
+.quote {
+ background-color: #EE82EE;
+ border:ridge 3px #000000;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright:5px;
+-moz-border-radius-bottomleft:5px;
+-moz-border-radius-bottomright:5px;
+-webkit-border-top-left-radius:5px;
+-webkit-border-top-right-radius:5px;
+-webkit-border-bottom-left-radius:5px;
+-webkit-border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+}
+.title{
+  font-family: 'Artifika', serif;
+  font-size: 30px;  
+}
+
+
+
 .push_up{
 	margin:  200px;
 	background-color: white;
