@@ -7,11 +7,22 @@
  
 
   <div class="container">
+
     <div class="row col-sm-6">
       <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary") %></div>
     <div class="title col.sm.12">
-    <%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary") %>
+    <%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary ") %>
       </div>
+
+    <div class="col-sm-6 quote">
+      <blockquote>
+        <h5><em>Today's quote about education</em>
+          <br/>
+    <p><% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
+      <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> </p>
+                   
+   </blockquote>
+    </div>
 </div>
 <br/></br>
 <h1>The Practice pile</h1>
@@ -43,7 +54,7 @@
   <% end %>
 </div>
 
-<!-- random quote -->
+
 
 
 

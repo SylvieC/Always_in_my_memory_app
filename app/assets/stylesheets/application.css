@@ -12,15 +12,12 @@
 }
 
 div.front{
-
-background-color: #FFD414;
-
+  background-color: #FFD414;
 }
+
 div.answer{
     background-color: #00FFFF;
- 
-           
-}
+ }
 
 div .front, .answer {
 -moz-box-shadow: 10px 10px 37px #000000;
@@ -34,7 +31,6 @@ text-align: center;
 font-family: 'Artifika', serif;
 font-size: 20px;
 padding-top: 20px;
-
 }
 
 .quote {
@@ -75,21 +71,20 @@ border-bottom-right-radius:5px;
     background:#F5F5F5;
     border:solid 1px black;
     border-radius: 5px;
-
 }
 .piles{
     font-size: 15px ;
 }
+h5{
+    text-align: right;
+}
 
-/*form*/
+
 .card_front {
     heigth: 200px;
     width: 100px;
 }
 
-
-
-}
 .card_title {
     margin-top: 20px;
     height:50px;
@@ -101,8 +96,8 @@ textarea{
     width: 300px;
     padding-top: 20px;
     margin-right: 30px;
-
 }
+
 h4, h1 {
     text-align: center;
 }
@@ -114,16 +109,9 @@ h4, h1 {
     padding-top: 5px;
     font-size:15px;
 }
+
 .down {
     margin-top: 40px;
-
-}
-
-    
-    
-    
-    
-  
 }
 .contentf{
     margin-bottom: 0px;
@@ -140,14 +128,11 @@ h4, h1 {
 }
 
 div.frontr{
-
-background-color: #FFD414;
-
+ background-color: #FFD414;
 }
+
 div.backr{
-    background-color: #00FFFF;
-   ; 
-           
+    background-color: #00FFFF; 
 }
 div .frontr, .backr {
 border:solid 2px #000000;
@@ -172,7 +157,12 @@ padding-top: 20px;
 
 }
 
-/*things*/
+.save-con{
+    padding:10px;
+    position:fixed;
+    top:50%;
+    background-color: rgba(255,0,0,.4);
+}
 
 html, body{
     font-family: 'Lato', sans-serif;
@@ -195,16 +185,11 @@ b, strong{
 .padded{
     padding: 80px 15px;
 }
-.marketing{
-    background-color: #e9e6df;   
-}
+
 hr {
     border-top: 1px solid #c9c9c9;   
 }
-.info{
-    background: #ffa753 url(../images/skyline.png) repeat-x bottom;
-    padding: 80px 0;
-}
+
 .info small{
     color: #eeefe9;   
 }
@@ -217,21 +202,7 @@ hr {
 .tab-pane{
     padding: 40px 10px 0 10px;
 }
-.ftr{
-    background: url(../images/shattered.png) repeat;
-    padding: 80px 0 60px 0;
-}
-.ftr address, .ftr a, .ftr p{
-    color: #fff;   
-}
-.ft_space{
-    padding: 0 10px;   
-}
-.blog h1 a{ color: #4b8575; }
-.blog p a{ color: #ed7337; }
-.sidebar{
-    background-color: #e9e6df;   
-}
+
 .bpad{ margin-bottom: 30px;}
 .map {
     height: 350px;
@@ -251,11 +222,3 @@ hr {
     height: 500px;
 }
     
-}
-
-.save-con{
-    padding:10px;
-    position:fixed;
-    top:50%;
-    background-color: rgba(255,0,0,.4);
-}

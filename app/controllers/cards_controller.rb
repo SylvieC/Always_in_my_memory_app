@@ -35,7 +35,7 @@ class CardsController < ApplicationController
      end
 
     # fill the practice pile with cards from the reserve pile if needed
-    if (Stack.find(2).cards.length < 5)
+    if (Stack.find(2).cards.length < 5) && (Stack.find(2).cards.length > 0)
        while (Stack.find(2).cards.length) < 5 && (Stack.find(1).cards.length > 0)
           move_card_from_top_of_reserve_pile_to_practice_pile()
        end
@@ -104,6 +104,7 @@ class CardsController < ApplicationController
    end
 
    def  move_card_from_top_of_practice_pile_to_already_learned_pile()
+      
       card_to_move = Stack.find(2).cards.first
       Stack.find(2).cards.delete(card_to_move)
       Stack.find(3).cards << card_to_move
