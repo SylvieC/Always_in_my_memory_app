@@ -7,7 +7,7 @@
 <% if signed_in? %>
 
 
-  <div class="container">
+  <div class="container top">
 	<div class="title">Hello <%= current_user().name %>
 	</div>
 
@@ -44,12 +44,12 @@
         <div class="col-xs-12 col-sm-4">
             <%= image_tag('lady_on_computer.jpeg', class: 'img-circle img-responsive') %>
             <h3>Practice pile</h3>
-            <p>The pile you view three times a day, consists of <strong>5</strong> cards<br>It will be the same for the first 5 days but after that, everyday, one card will be taken out and replaced by a new card. The card taken out will be taken from the reserve pile and will go to the "I know this" pile, </p>
+            <p>The pile you view three times a day, consisting of <strong>5</strong> cards<br> Everyday, one card will be taken out and replaced by a new card. The new card will be retrieved from the reserve pile and go to the "I know this" pile.<small>The cycle described about starts on day 5, when the card to be retrieved will have been viewed 15 times, or 3 days. </p>
 
             <p><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p> 
         </div>
             <div class="col-xs-12 col-sm-4">
-                <%= image_tag('pile.jpeg', class: 'img-circle img-responsive flashcard') %>
+                <div class="picture"><%= image_tag('pile.jpeg', class: 'img-circle img-responsive flashcard') %></div>
             
                 <h3>Reserve pile</h3>
                 <p>Where you put the "cards" you want to learn, they will automatically go to the Practice pile when needed. Copy paste or write the back and front contents and build the pile. The flow of cards will happen automatically</p>

@@ -48,13 +48,57 @@ border-bottom-right-radius:5px;
   margin: 2px;
 }
 
-
+.top_page {
+    padding-top: 100px;
+}
 
 .push_up{
 	margin:  200px;
 	background-color: white;
 	height: 200px;
 }
+.form {
+    background: yellow;
+
+}
+
+/*form*/
+.card_front {
+    heigth: 200px;
+    width: 100px;
+}
+.one{
+    background-color: yellow;
+    border-radius: 20px;
+
+}
+.card_title {
+    margin-top: 20px;
+    height:50px;
+}
+textarea{
+    padding-top: 20px;
+    background:orange;
+    height:120px;
+    width: 300px;
+    padding-top: 20px;
+    margin-right: 30px;
+
+}
+h4, h1 {
+    text-align: center;
+}
+
+.notify{
+    background-color: #EE82EE;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+
+/*things*/
 
 html, body{
     font-family: 'Lato', sans-serif;
