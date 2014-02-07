@@ -1,6 +1,8 @@
 <%= render partial: 'layouts/header'%><br><br>
 <div class="container">
   <h1>Let's practice</h1>
+  <h1> The number of views is<%= @view %></h1>
+  The first card of the pile is <%= @stacks.find(2).cards.first.title %>
 
   <%= form_for :practice, url: "/practice", method: "post", html: {id: "count_form"} do |f| %>
   <% end %>

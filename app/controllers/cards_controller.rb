@@ -29,12 +29,14 @@ class CardsController < ApplicationController
     # make the stacks available to js via gon
     
     gon.length = Stack.find(2).cards.length
-    view = View.find(1).value
-    day = 1 + view / 3
+    @view = View.find(1).value
+    if (@view % 3 === 0) && (@view > 14) 
+     move_card_from_top_of_practice_pile_to_already_learned_pile()
+     end
 
     # fill the practice pile with cards from the reserve pile if needed
     if (Stack.find(2).cards.length < 5)
-       while (Stack.find(2).cards.length) < 5 && (Stack.find(1).cards.length > 0 )
+       while (Stack.find(2).cards.length) < 5 && (Stack.find(1).cards.length > 0)
           move_card_from_top_of_reserve_pile_to_practice_pile()
        end
     end
@@ -42,18 +44,17 @@ class CardsController < ApplicationController
     #count the days, from days 1 to 5, show the same pile, starting at day 6, the first card of the practice pile
     # is put into the already_learned pile, and one is taken from the reserve pile. The same thing will happen
     # every day, or every 4th viewing of the pile
-    if (view % 3 == 0) && (day > 5)
-      move_card_from_top_of_practice_pile_to_already_learned_pile()
-      move_card_from_top_of_reserve_pile_to_practice_pile()
-    end
-
-  end 
+    change = false
+   
+   end 
    
  def viewed_stack
    view = View.find(1)
+   puts "*"*20+"View"+"*"*20
+ 
    view.value += 1
    view.save
-   render nothing: true, status: 201
+   redirect_to "/"
  end
    
   
@@ -104,6 +105,7 @@ class CardsController < ApplicationController
 
    def  move_card_from_top_of_practice_pile_to_already_learned_pile()
       card_to_move = Stack.find(2).cards.first
+      Stack.find(2).cards.delete(card_to_move)
       Stack.find(3).cards << card_to_move
    end
 	 	

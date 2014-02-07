@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 	before_save { |user| user.email = email.downcase }
   	before_save :create_remember_token
 
+  has_one :view
+
   has_secure_password
   private
 

@@ -2,9 +2,9 @@ var length = gon.length;
 var count = 0;
  
 $(window).load(function(){
-	$("#count_form").on("submit", function(ev){
-		ev.preventDefault();
-	})
+	$("body").on("click","#save", function(ev){
+		$("#count_form").submit();
+	});
   console.log("hello");
    $(".answer").hide();
  
@@ -14,7 +14,8 @@ $(window).load(function(){
      $("#" + cardId).show();
      if(count >= length) {
      	console.log("FIRED EVENT")
-     	$("#count_form").submit();
+     	$("body").append("<div class='save-con'><button id='save' class='btn btn-danger'>SAVE PRACTICE</button></div>");
+
 		}
    })
   });

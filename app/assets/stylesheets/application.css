@@ -44,6 +44,10 @@ border-bottom-right-radius:5px;
   font-size: 30px;  
 }
 
+.flashcard{
+  margin: 2px;
+}
+
 
 
 .push_up{
@@ -127,6 +131,9 @@ hr {
     
 }
 
-
-
-
+.save-con{
+    padding:10px;
+    position:fixed;
+    top:50%;
+    background-color: rgba(255,0,0,.4);
+}
