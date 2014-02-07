@@ -44,11 +44,9 @@ group :development do
 
  gem 'pry'
  gem 'quiet_assets'
- gem  'better_errors' 
  gem  'binding_of_caller'
  gem 'meta_request'
  gem 'awesome_print'
- gem 'pry-byebug'
  gem 'pry-rails'
 
 

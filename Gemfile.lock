@@ -29,15 +29,9 @@ GEM
     atomic (1.1.14)
     awesome_print (1.2.0)
     bcrypt-ruby (3.1.2)
-    better_errors (1.1.0)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.1.4)
-    byebug (2.5.0)
-      columnize (~> 0.3.6)
-      debugger-linecache (~> 1.2.0)
     callsite (0.0.11)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -47,9 +41,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    columnize (0.3.6)
     debug_inspector (0.0.2)
-    debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.0.2)
     gon (5.0.1)
@@ -82,9 +74,6 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pry-byebug (1.2.1)
-      byebug (~> 2.2)
-      pry (~> 0.9.12)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     quiet_assets (1.0.2)
@@ -153,7 +142,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bcrypt-ruby (~> 3.1.2)
-  better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
   gon
@@ -163,7 +151,6 @@ DEPENDENCIES
   net-http-persistent (~> 2.9.1)
   pg
   pry
-  pry-byebug
   pry-rails
   quiet_assets
   rails (= 4.0.2)

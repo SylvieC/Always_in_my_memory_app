@@ -97,7 +97,7 @@ class CardsController < ApplicationController
     	redirect_to reserve_path
     end
 
-  def  move_card_from_top_of_reserve_pile_to_practice_pile(
+  def  move_card_from_top_of_reserve_pile_to_practice_pile
      card_to_move = Stack.find(1).cards.first
      Stack.find(1).cards.delete(card_to_move)
      Stack.find(2).cards << card_to_move
