@@ -1,3 +1,16 @@
+
+.img1{
+    margin-top: 60px;
+}
+
+.intro{
+    margin-top: 35px;
+}
+
+.name{
+    color: #08298A;
+}
+
 div.front{
 
 background-color: #FFD414;
@@ -8,6 +21,7 @@ div.answer{
    ; 
            
 }
+
 div .front, .answer {
 -moz-box-shadow: 10px 10px 37px #000000;
 -webkit-box-shadow: 10px 10px 37px #000000;
@@ -58,8 +72,13 @@ border-bottom-right-radius:5px;
 	height: 200px;
 }
 .form {
-    background: yellow;
+    background:#F5F5F5;
+    border:solid 1px black;
+    border-radius: 5px;
 
+}
+.piles{
+    font-size: 15px ;
 }
 
 /*form*/
@@ -67,9 +86,8 @@ border-bottom-right-radius:5px;
     heigth: 200px;
     width: 100px;
 }
-.one{
-    background-color: yellow;
-    border-radius: 20px;
+
+
 
 }
 .card_title {
@@ -78,7 +96,7 @@ border-bottom-right-radius:5px;
 }
 textarea{
     padding-top: 20px;
-    background:orange;
+    background:FDFDFD;
     height:120px;
     width: 300px;
     padding-top: 20px;
@@ -94,9 +112,65 @@ h4, h1 {
     border-radius: 5px;
     text-align: center;
     padding-top: 5px;
+    font-size:15px;
+}
+.down {
+    margin-top: 40px;
+
 }
 
+    
+    
+    
+    
+  
+}
+.contentf{
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    background-color: green;
+}
+.contentb{
+    background-color:purple;
+    padding-bottom: 0;
+}
 
+.col-xs-1{
+    margin-left: 0;
+}
+
+div.frontr{
+
+background-color: #FFD414;
+
+}
+div.backr{
+    background-color: #00FFFF;
+   ; 
+           
+}
+div .frontr, .backr {
+border:solid 2px #000000;
+-moz-border-radius-topleft: 21px;
+-moz-border-radius-topright:18px;
+-moz-border-radius-bottomleft:17px;
+-moz-border-radius-bottomright:18px;
+-webkit-border-top-left-radius:21px;
+-webkit-border-top-right-radius:18px;
+-webkit-border-bottom-left-radius:17px;
+-webkit-border-bottom-right-radius:18px;
+border-top-left-radius:21px;
+border-top-right-radius:18px;
+border-bottom-left-radius:17px;
+border-bottom-right-radius:18px;
+height: 80px;
+padding: 10px;
+text-align: center;
+font-family: 'Artifika', serif;
+font-size: 20px;
+padding-top: 20px;
+
+}
 
 /*things*/
 
@@ -119,7 +193,7 @@ b, strong{
     padding-top: 20px;
 }
 .padded{
-    padding: 100px 15px;
+    padding: 80px 15px;
 }
 .marketing{
     background-color: #e9e6df;   
@@ -163,7 +237,11 @@ hr {
     height: 350px;
     width: 100%;
 }
-
+.paragraph2{
+    margin-top:20px;
+    position:relative;
+    top:-3e;
+}
 
 @media(min-width: 768px){
 .carousel-inner > .item{

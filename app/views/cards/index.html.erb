@@ -7,25 +7,52 @@
 	<br>
 
 
-
-</h2> Welcome to <h1><em>Always In My Memory</em></h1>
-Set the timer on to be reminded to view your pack
-</div>
-<!-- <a href="cards/practice">Let's practice</a><br>
-<a href="cards/reserve">Go to the reserve pile</a> -->
 <div class="intro-block">
     <div class="container">
         <div class="row">
             <div class="col-xs-3">
-                <img class="img-responsive tpad" src="assets/person_writing.png">
+                <%= image_tag('person_writing.jpeg', class: 'img-circle img-responsive img1') %>
             </div>
-            <div class="col-xs-9">
-                <h1>It's here to stay<span class="text-muted">&raquo; An easy systematic way to learn, a little bit everyday</span></h1>
-                <p class="lead">The best way to learn is a little bit at a time, 3 times a day, for 5 days, and it will be in your memory forever</p>
+            <div class="col-xs-9 intro">
+                <h1>It's here to stay <span class="text-muted">&raquo; An easy and systematic way to learn, a little bit everyday</span></h1>
+                <p class="lead">The best way to learn is a little bit at a time.<br> View your cards 3 times a day. After 5 days what you learned will be in your memory forever<br>    
+                </p>
             </div>
         </div>
     </div>    
 </div>
+<!-- Explanation of the piles -->
+
+<div class="container padded">
+    <div class="row">
+        <div class="col-lg-12"><h2>Three piles to interact with</h2><hr></div>
+    </div>
+    <div class="row piles">
+        <div class="col-xs-12 col-sm-4">
+            <%= image_tag('lady_on_computer.jpeg', class: 'img-circle img-responsive') %>
+            <h3>Practice pile</h3>
+            <p>The pile you view three times a day, consisting of <strong>5</strong> cards<br> Everyday, one card will be taken out and replaced by a new card. The new card will be retrieved from the reserve pile and go to the "I know this" pile.<small>The cycle described about starts on day 5, when the card to be retrieved will have been viewed 15 times, or 3 days. </p>
+
+            <p><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p> 
+        </div>
+            <div class="col-xs-12 col-sm-4 piles ">
+                <%= image_tag('pile.jpeg', class: 'img-circle img-responsive flashcard') %>
+            
+                <h3>Reserve pile</h3>
+                <p>Where you put the "cards" you want to learn, they will automatically go to the Practice pile when needed. Copy paste or write the back and front contents and build the pile. The flow of cards will happen automatically</p>
+                <p><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary"  ) %></p>
+            </div>
+            
+            <div class="col-xs-12 col-sm-4 piles">
+                <%= image_tag('pile_of_flashcards.jpeg', class: 'img-circle img-responsive') %>
+               
+                <h3>"I know it" pile</h3>
+                <p>"Cards" you have already learned</p>
+                <p><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-primary") %></p>
+            </div>
+
+        </div>
+    </div>    
 
 
 

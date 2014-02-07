@@ -1,34 +1,50 @@
-<%= render partial: 'navbar'%><br><br>
-<div class="container">
+<%= render partial: 'layouts/header'%><br><br>
+<div class="container down">
 
-	<h1>"I know it pile"</h1>
+	 <div class="container">
+	 	<div class="row">
+    <div class="row col-sm-6">
+      <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary") %></div>
+     </div>
+     <br/>
+     <div class="row">
 
-
-
-
-	<a href="/reserve">Go to the reserve pile</a><br>
-	<a href="/cards">Let's practice</a>
+    
+          <%= link_to("Let's practice!", practice_path, :class => "btn btn-large btn-primary") %>
+      </div>
+    </div>
 </div>
 
-<% Stack.find(3).cards.each do |card| %>
-<div class="row">
+	<h1>"I know it" pile</h1>
+
+
+
+ <% Stack.find(3).cards.each do |card| %>
+<div class="row down">
   <div class="col-xs-1">
-  
-  <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete %>
-   </div>
-  <div class="col-xs-5">
-    <div class="well">
-      <%= card.title %>
-    </div>
+    <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete %>
   </div>
-  <div class="col-xs-6">
-    <div class="well">
-      <%= card.content %>
-    </div>
-  </div>
-  <div class="clearfix hidden-md hidden-lg">
-  </div>
+  <div class="col-xs-4">
+   <div data-card="<%= card.id %>" class="frontr"><%= card.title %></div>
+ </div>
+
+ <div class="col-xs-5">
+   <div id="<%= card.id %>" class="backr"><%= card.content %></div>
+ </div>
+
+
+
+ <div class="clearfix hidden-md hidden-lg"></div>
 </div>
 <hr/>
-<% end %>
+
+<%end%>
+  
+  
+
+
+
+
+
+
 

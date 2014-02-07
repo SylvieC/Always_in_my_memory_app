@@ -18,7 +18,7 @@
 <br/><br/>
 
   <!-- Forms to create 1 card  -->
-   <h4>Add cards to the reserve pile</h4> 
+   <h4><em>Add cards to the reserve pile</em></h4> 
 <div class="container form">
   <br/>
 
@@ -38,15 +38,15 @@
 
 <%= f.submit %> 
 
-
-<% end %>
 </div>
+<% end %>
 
 
 
 
 
-  <h1>This is the Reserve pile of cards</h1>
+
+  <h1>Cards in the reserve pile</h1>
   
 
 
@@ -68,50 +68,31 @@
 
      <div class="clearfix hidden-md hidden-lg">
      </div>
+     <br/>
      
-  
-  
-  
-<!-- 
-Iterate through the pile to show the cards -->
-<div class="container">
-<% Stack.find(1).cards.each do |card| %>
-<div class="row">
+ <!--  show cards -->
+  <% Stack.find(1).cards.each do |card| %>
+<div class="row down">
   <div class="col-xs-1">
-  
-  <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete %>
-   </div>
-  <div class="col-xs-5">
-    <div class="well">
-      <%= card.title %>
-    </div>
+    <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete %>
   </div>
-  <div class="col-xs-6">
-    <div class="well">
-      <%= card.content %>
-    </div>
-  </div>
-  <div class="clearfix hidden-md hidden-lg">
-  </div>
-</div
+  <div class="col-xs-4">
+   <div data-card="<%= card.id %>" class="frontr"><%= card.title %></div>
+ </div>
+
+ <div class="col-xs-5">
+   <div id="<%= card.id %>" class="backr"><%= card.content %></div>
+ </div>
+
+
+
+ <div class="clearfix hidden-md hidden-lg"></div>
+</div>
 <hr/>
-<% end %>
-</div>
 
-
-
-
-
-
-
-
-
-
-
-
-<div class="push_up">
-
-</div>
+<%end%>
+  
+  
 
 
 

@@ -1,8 +1,6 @@
 <%= render partial: 'layouts/header'%><br><br>
-<div class="container">
-  <h1>Let's practice</h1>
-  <h1> The number of views is<%= @view %></h1>
-  The first card of the pile is <%= @stacks.find(1).cards.first.title %>
+<div class="container down ">
+
 
   <%= form_for :practice, url: "/practice", method: "post", html: {id: "count_form"} do |f| %>
   <% end %>
@@ -16,6 +14,7 @@
       </div>
 </div>
 <br/></br>
+<h1>The Practice pile</h1>
  <p><em>click on the card to see the other side</em></p>
 <!-- show cards -->
 <% Stack.find(2).cards.each do |card| %>
