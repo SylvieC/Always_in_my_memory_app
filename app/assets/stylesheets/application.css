@@ -203,7 +203,9 @@ hr {
     padding: 40px 10px 0 10px;
 }
 
-.bpad{ margin-bottom: 30px;}
+.bpad{ 
+    margin-bottom: 30px;
+}
 .map {
     height: 350px;
     width: 100%;
@@ -214,11 +216,4 @@ hr {
     top:-3e;
 }
 
-@media(min-width: 768px){
-.carousel-inner > .item{
-    height: 700px;   
-}
-.map {
-    height: 500px;
-}
     
