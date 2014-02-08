@@ -5,17 +5,20 @@
   <%= form_for :practice, url: "/practice", method: "post", html: {id: "count_form"} do |f| %>
   <% end %>
  
-
-  <div class="container">
-
-    <div class="row col-sm-6">
-      <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary") %></div>
-    <div class="title col.sm.12">
-    <%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary ") %>
-      </div>
-      <br/>
-
-    <div class="col-sm-6 quote">
+ <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary") %>
+                      </div>
+  
+                    <div class="col-md-6">
+                        <%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary ") %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 quote">
       <blockquote>
         <h5><em>Today's quote about education</em>
           <br/>
@@ -23,11 +26,24 @@
       <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> </p>
                    
    </blockquote>
-    </div>
+ </div>
 </div>
+</div>
+ 
+
+
+
+  
 <br/></br>
 <h1>The Practice pile</h1>
+<p class="center"> You have viewed this pile  <%= @view % 3 %> <%= (@view % 3)<2 ? "time" : "times"%>
+  <% if @view % 3 == 0 %>
+  <p class="center">A new card was just added to your pile</p>
+  <% end %>
+     
+<br/>
  <p><em>click on the card to see the other side</em></p>
+
 <!-- show cards -->
 <% Stack.find(2).cards.each do |card| %>
 <div class="row">

@@ -1,25 +1,15 @@
 
 
 <%= render  partial: "layouts/header"%>
-<br><br><br><br>
+
 
 
 <% if signed_in? %>
-
-
-  <div class="container top">
-	<div class="name title">Hello <%= current_user().name %>
-	</div>
-
-
+<div class="container down">
+   <div class="name title">HELLO <%= current_user().name %></div>
 </div>
-
-
-
-
-
-
 <% end %>
+
 <div class="intro-block">
     <div class="container">
         <div class="row">
@@ -27,9 +17,8 @@
                 <%= image_tag('person_writing.jpeg', class: 'img-circle img-responsive img1') %>
             </div>
             <div class="col-xs-9 intro">
-                <h1>It's here to stay <span class="text-muted">&raquo; An easy and systematic way to learn, a little bit everyday</span></h1>
-                <p class="lead">The best way to learn is a little bit at a time.<br> View your cards 3 times a day. After 5 days what you learned will be in your memory forever<br>    
-                </p>
+                <h1><em>Forget Me Not</em> <br/<span class="text-muted"></br>A unique app helping you to learn systematically all the things you always wanted to learn</span></h1>
+              <!--   <p class="lead">The best way to learn is a little bit at a time.<br> View your cards 3 times a day. After 5 days what you learned will be in your memory forever<br> </p> -->
             </div>
         </div>
     </div>    
@@ -43,29 +32,37 @@
     <div class="row piles">
         <div class="col-xs-12 col-sm-4">
             <%= image_tag('lady_on_computer.jpeg', class: 'img-circle img-responsive') %>
-            <h3>Practice pile</h3>
-            <p>The pile you view three times a day, consisting of <strong>5</strong> cards<br> Everyday, one card will be taken out and replaced by a new card. The new card will be retrieved from the reserve pile and go to the "I know this" pile.<small>The cycle described about starts on day 5, when the card to be retrieved will have been viewed 15 times, or 3 days. </p>
+            <br/>
+            <h3>Things I'm learning<br/>~practice pile~</h3>
+         
+            <p>The pile consisting of <strong> s    5</strong> cards where you view the cards.<br> After a card has been viewed a minimum of 15 times, it it directed to the "Things I have learned" pile. It is then replaced by a new card from the "things I want learn" pile. <small>The cycle described above starts only after the initial piles is viewed 15 times. From that time on, all the cards in the pile have been viewed 15 times. This allows the process of adding and retrieving cards to start since the first card can only be taken away after having been view 15 times.</p>
 
             <p><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p> 
         </div>
-            <div class="col-xs-12 col-sm-4 piles ">
+        <div class="col-xs-12 col-sm-4 piles ">
                 <%= image_tag('pile.jpeg', class: 'img-circle img-responsive flashcard') %>
+                <br/>
                 
-                <h3 class="paragraph2">Reserve pile</h3>
-                <p class="paragraph2">Where you put the "cards" you want to learn, they will automatically go to the Practice pile when needed. Copy paste or write the back and front contents and build the pile. The flow of cards will happen automatically</p>
+                <h3 class="paragraph2">Things I want to learn</h3><br/>
+                <p class="paragraph2">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. Copy paste or write the back and front content of what you want to learn and build your pile. The flow of cards will happen automatically</p>
+                <br/>
                 <p><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary"  ) %></p>
-            </div>
-            
-            <div class="col-xs-12 col-sm-4 piles">
-                <%= image_tag('pile_of_flashcards.jpeg', class: 'img-circle img-responsive') %>
-               
-                <h3>"I know it" pile</h3>
-                <p>"Cards" you have already learned</p>
-                <p><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-primary") %></p>
-            </div>
-
         </div>
-    </div>    
+            
+        <div class="col-xs-12 col-sm-4 piles">
+                <%= image_tag('pile_of_flashcards.jpeg', class: 'img-circle img-responsive') %>
+               <br/>
+                <h3>Things I have learned</h3><br/>
+
+                <p>Things you have already learned. You can go to this pile and review.</p>
+                <br/>
+                <p><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-primary") %></p>
+        </div>
+
+        <div class="container">
+             <%= image_tag('pp1.png', class: 'img-responsive') %>
+
+         
 
 
 
