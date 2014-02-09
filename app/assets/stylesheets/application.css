@@ -6,6 +6,7 @@
 
 .intro{
     margin-top: 35px;
+    font-size: 30px;
 }
 
 .name{
@@ -52,7 +53,7 @@ border-bottom-right-radius:5px;
 }
 .title{
   font-family: 'Artifika', serif;
-  font-size: 30px;  
+  font-size: 20px;  
 }
 
 .flashcard{
@@ -84,6 +85,7 @@ h3{
 }
 .center{
     text-align: center;
+    margin: auto 0;
 }
 
 
@@ -118,7 +120,7 @@ h4, h1 {
 }
 
 .down {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .contentf{
     margin-bottom: 0px;
@@ -220,7 +222,60 @@ hr {
 .paragraph2{
     margin-top:20px;
     position:relative;
-    top:-3e;
+}
+.text-muted{
+    color: #e9e6df;
+    font-weight: 100;
+}
+.forget_me_not{
+
+    font-size: 40px;
+
+}
+
+.tpad{
+    padding-top: 20px;
+}
+.marketing{
+    background-color: #e9e6df;   
+}
+.lead {
+   
+}
+.first{
+    color: #504A4B; 
+    font-size:25px;
+}
+.intro-block{
+    background:#FFFDD0;
+    height: 200px;
+}
+.interact {
+      
+      margin: 0;
+    background:#ffe6d0;
+    padding-left: 30px;
+    padding-right:30px;
+}
+.piles{
+    margin: 0;
+}
+
+.intro-block.down{
+    height: 260px;
+}
+.imright{
+    postion:relative;
+    left:30px;
+
+}
+.padd{
+    padding-left: 30px;
+}
+.img-circle.img-responsive.imright {
+padding-right: 0;
+position: relative;
+left: 60px;
 }
 
     

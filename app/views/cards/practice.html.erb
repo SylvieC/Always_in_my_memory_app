@@ -36,9 +36,12 @@
   
 <br/></br>
 <h1>The Practice pile</h1>
-<p class="center"> You have viewed this pile  <%= @view % 3 %> <%= (@view % 3)<2 ? "time" : "times"%>
-  <% if @view % 3 == 0 %>
-  <p class="center">A new card was just added to your pile</p>
+<% if @view < 15 %>
+  <p class="center"> You have viewed this pile  <%= @view %> <%= @view <2 ? "time" : "times"%>
+
+<% elsif @view % 3 == 0 %>
+      <p class="center"> You have viewed this pile  <%= @view % 3 %> <%= (@view % 3)<2 ? "time" : "times"%>
+      <p class="center">A new card was just added to your pile</p>
   <% end %>
      
 <br/>
