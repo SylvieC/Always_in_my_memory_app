@@ -120,7 +120,7 @@ h4, h1 {
 }
 
 .down {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .contentf{
     margin-bottom: 0px;
@@ -220,8 +220,8 @@ hr {
     width: 100%;
 }
 .paragraph2{
-    margin-top:20px;
-    position:relative;
+    margin-top:13px;
+  
 }
 .text-muted{
     color: #e9e6df;
@@ -248,12 +248,12 @@ hr {
 }
 .intro-block{
     background:#FFFDD0;
-    height: 200px;
+    height: 100.px;
 }
 .interact {
       
       margin: 0;
-    background:#ffe6d0;
+    background:#FFFDD0;
     padding-left: 30px;
     padding-right:30px;
 }
@@ -277,5 +277,39 @@ padding-right: 0;
 position: relative;
 left: 60px;
 }
+.to-the-right{
+    text-align: right;
+    padding-right: 8em;
+}
+.grey{
+    color: #C0C0C0;
+}
+.intro-block.down {
+    margin-top: 0px;
+    
+}
+.container.down{
+    padding-top: 0px;
+}
 
+
+@media(min-width: 768px){
+.carousel-inner > .item{
+    height: 700px;   
+}
+}
+@media(max-width: 768px){
+    .intro-block.down{
+    height: 350px;
+    background: green;
+}
+  .down{
+    margin-top:50px;
+  }
+}
+.container.down{
+    margin-top:20px;
+    padding-top: 10px;
+}
+}
     

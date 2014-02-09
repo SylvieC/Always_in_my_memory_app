@@ -34,19 +34,19 @@ class CardsController < ApplicationController
 
     # fill the practice pile with cards from the reserve pile if needed
     if (Stack.find(2).cards.length < 5) 
-       while (Stack.find(2).cards.length) < 5 && (Stack.find(1).cards.length >= 0)
+       until (Stack.find(2).cards.length)== 5 ||  (Stack.find(1).cards.length == 1)
           move_card_from_top_of_reserve_pile_to_practice_pile()
        end
     end
-     
-     if (@view % 3 == 0) && (@view > 14) 
-     move_card_from_top_of_practice_pile_to_already_learned_pile()
-     move_card_from_top_of_reserve_pile_to_practice_pile()
-     end
-     
-    
-
-     end
+     i = @view 
+     if i % 3 == 0 && i > 14 && !(Stack.find(2).cards).empty?
+        move_card_from_top_of_practice_pile_to_already_learned_pile()
+        i = i+1
+        if !(Stack.find(2).cards).empty?
+            move_card_from_top_of_reserve_pile_to_practice_pile
+        end
+      end
+    end
 
     #count the days, from days 1 to 5, show the same pile, starting at day 6, the first card of the practice pile
     # is put into the already_learned pile, and one is taken from the reserve pile. The same thing will happen
@@ -105,16 +105,18 @@ class CardsController < ApplicationController
     end
 
   def  move_card_from_top_of_reserve_pile_to_practice_pile
+     if !(Stack.find(1).cards.empty?)
      card_to_move = Stack.find(1).cards.first
      Stack.find(1).cards.delete(card_to_move)
      Stack.find(2).cards << card_to_move
+   end
    end
 
    def  move_card_from_top_of_practice_pile_to_already_learned_pile()
       if Stack.find(2).cards.length > 0
       card_to_move = Stack.find(2).cards.first
       Stack.find(2).cards.delete(card_to_move)
-      Stack.find(3).cards.unshift(card_to_move)
+      Stack.find(3).cards.push(card_to_move)
     end
    end
 
