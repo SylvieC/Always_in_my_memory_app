@@ -290,6 +290,7 @@ left: 60px;
 }
 .container.down{
     padding-top: 0px;
+
 }
 
 
@@ -301,15 +302,15 @@ left: 60px;
 @media(max-width: 768px){
     .intro-block.down{
     height: 350px;
-    background: green;
+    
 }
   .down{
     margin-top:50px;
   }
-}
+
 .container.down{
     margin-top:20px;
-    padding-top: 10px;
+    padding-top: 40px;
 }
 }
     
