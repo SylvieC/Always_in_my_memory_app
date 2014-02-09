@@ -1,4 +1,4 @@
-.well{background:white;}
+
 
 .img1{
     margin-top: 60px;
@@ -90,7 +90,7 @@ h3{
 
 
 .card_front {
-    heigth: 200px;
+    height: 200px;
     width: 100px;
 }
 
@@ -239,9 +239,7 @@ hr {
 .marketing{
     background-color: #e9e6df;   
 }
-.lead {
-   
-}
+
 .first{
     color: #504A4B; 
     font-size:25px;
