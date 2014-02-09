@@ -297,6 +297,7 @@ left: 60px;
     height: 700px;   
 }
 }
+
 @media(max-width: 768px){
     .intro-block.down{
     height: 350px;
