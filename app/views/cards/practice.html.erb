@@ -7,27 +7,27 @@
  
  <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <div class="row">
-                    <div class="col-md-6">
+            <div class="col-md-4">
+                    <div class="col-md-12">
                         <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary") %>
+                        
                       </div>
+                      <br/>
   
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary ") %>
                     </div>
-                </div>
             </div>
-            <div class="col-md-9 quote">
+           <div class="col-md-8 quote">
       <blockquote>
         <h5><em>Today's quote about education</em>
           <br/>
     <p><% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
       <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> </p>
                    
-   </blockquote>
- </div>
-</div>
+       </blockquote>
+         </div>
+      </div>
 </div>
  
 
@@ -76,9 +76,4 @@
   <p> You need to add cards to your reserve pile, to make this pile have 5 cards </p>
   <% end %>
 </div>
-
-
-
-
-
 

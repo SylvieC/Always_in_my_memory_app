@@ -27,7 +27,7 @@ div .front, .answer {
 box-shadow: 10px 10px 37px #000000;
 border: solid black 1px;
 border-radius: 10px;
-height: 80px;
+height: 90px;
 padding: 10px;
 text-align: center;
 font-family: 'Artifika', serif;
@@ -138,10 +138,12 @@ h4, h1 {
 
 div.frontr{
  background-color: #FFD414;
+ heigth: 100px;
 }
 
 div.backr{
-    background-color: #00FFFF; 
+    background-color: #00FFFF;
+    height: 100px; 
 }
 div .frontr, .backr {
 border:solid 2px #000000;
@@ -157,7 +159,7 @@ border-top-left-radius:21px;
 border-top-right-radius:18px;
 border-bottom-left-radius:17px;
 border-bottom-right-radius:18px;
-height: 80px;
+height: 100px;
 padding: 10px;
 text-align: center;
 font-family: 'Artifika', serif;
@@ -312,4 +314,9 @@ left: 60px;
     padding-top: 40px;
 }
 }
-    
+.well{
+    background: white;
+}
+ .steps{
+    font-size: 20px;
+ }   
