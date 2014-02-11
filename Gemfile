@@ -48,6 +48,11 @@ group :development do
  gem 'meta_request'
  gem 'awesome_print'
  gem 'pry-rails'
+ # gem 'dotenv-rails'
+ # gem 'database_cleaner'
+ # gem 'guard-rspec'
+ # gem 'guard-livereload'
+ # gem 'dotenv-rails'
 
 
 end

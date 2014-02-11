@@ -319,4 +319,41 @@ left: 60px;
 }
  .steps{
     font-size: 20px;
- }   
+    font:italic;
+ } 
+
+ #first, #second, #third{
+    font-size: 50px;
+    text-align: center;
+ }
+
+ .front.one { 
+    background-color:#a8a8a8;
+} 
+ .front.two { 
+    background-color: #99CCFF;
+} 
+.front.three{
+    background-color:#FF99FF ;
+}
+.front.four{
+    background-color: #99FF99;
+}
+
+
+.front.five{
+    background-color:#FF9900 ;
+}
+
+.front.six{
+    background-color:#ffff66;
+}
+
+.front.seven{
+    background-color: #64dbdb;
+}
+.front.eight{
+    background-color:#FF9900 ;
+}
+
+
