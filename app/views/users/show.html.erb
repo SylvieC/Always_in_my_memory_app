@@ -44,7 +44,7 @@
             <h3>Things I'm learning<br/><span class="grey">~practice pile~</h3><br/><br/>
              <p class="center"><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p></span><br/>
          
-            <p>The pile consisting of <strong>5</strong> cards is the pile you work on every learning session.<br> After a card has been viewed a minimum of 15 times, it it directed to the "Things I have learned" pile. It is then replaced by a new card from the "things I want learn" pile. <small>The cycle described above starts only after the initial pile has been viewed 15 times. From that time on, all the cards in the pile have been viewed 15 times. This allows the process of adding and retrieving cards to start since the first card can only be taken away after having been view 15 times.</p>
+            <p>The pile consisting of <strong>5</strong> cards is the pile you work on every learning session.<br> After a card has been viewed a minimum of 15 times, it is directed to the "Things I have learned" pile. It is then replaced by a new card from the "things I want learn" pile. <small>The cycle described above starts only after the initial pile has been viewed 15 times. From that time on, all the cards in the pile have been viewed 15 times. This allows the process of adding and retrieving cards to start since the first card can only be taken away after having been viewed 15 times.</p>
 
             
         </div>
@@ -75,59 +75,60 @@
              
         </div>
     </div>
-    <br/><br/>
+  </div>
+    <br/><br/><br/><br/>
 
 <!-- Demonstration of how it works -->
- <div class="container ">
-   <div class="row">
-    <div class=" well col-sm-12 center">
-      <h2>How it works </h2>
+<div id="last">
+  <div class="row">
+    <div class="  col-sm-12 center">
+      <h1>How it works - A step by step explanation </h1>
      </div>
  </div>
     
     <div class="row">
-      <div class="well col-sm-12">
-        <h3>Step 1</h3> <p class="center steps">Fill the reserve cards with the cards of your choice</p>
+      <div class= "col-sm-12">
+        <h3>Step 1</h3> <p class="center steps">Fill the reserve cards with the cards of your choice</p><br/><br/>
     </div>
 </div>
     <div class="row">
     
-        <div class="well col-sm-6">
+        <div class=" col-sm-6">
        <%= image_tag('reserve_pile1.png', class: ' img-responsive') %> 
     </div>
-       <div class="well col-sm-6">
+       <div class=" col-sm-6">
         <%= image_tag('reserse_pile2.png', class: ' img-responsive') %> 
-       </div>
+       </div><br/><br/><br/>
   </div>
 
      
-
-
-
-    
-        <div class="row">
-         <div class="well col-sm-12">
-        <h3>Step 2</h3><p class="center steps"> Go to the practice pile. The first 5 cards you put in the reserve pile will automatically go to the practice pile. Click on each card to see the other side, trying to memorize its content or to quiz yourself if you think you know it</p>
-      </div>
-      <div class="well col-sm-12">
+    <div class="row">
+      <div class=" col-sm-12">
+        <br/><br/>
+        <h3>Step 2</h3><p class="center steps"> Go to the practice pile. The first 5 cards you put in the reserve pile will automatically go to the practice pile. Click on each card to see the other side, trying to memorize its content or to quiz yourself if you think you know it</p><br/><br/>
+       </div>
+      <div class=" col-sm-12">
          <%= image_tag('pp3.png', class: ' img-responsive') %> 
       </div>
-      <div class="well col-sm-12">
+      <div class=" col-sm-12">
+        <br/><br/>
         <h3>Step 3</h3> <p class="center steps">Save each practice by clicking on the red "save practice" button </p>
       </div>
-      <div class="well col-sm-12">
+      <div class="col-sm-12">
          <%= image_tag('pp4.png', class: ' img-responsive') %> 
       </div>
-      <div class="well col-sm-12">
-      <h3>Step 4</h3> <p class="center steps">Repeat this process for 15 times, spacing the practice times. Important note: When you start, the first 15 viewing of the pile will stay unchanged, but after that, il will be very different. 
-        The reason for this is that no card can be taken from the pile if it hasn't been viewed a minimum of 15 times</p>
+      <div class=" col-sm-12">
+        <br/><br/>
+      <h3>Step 4</h3> <p class="center steps">Repeat this process for 15 times, spacing the practice times. <strong>Important note</strong>: When you start, the first 15 viewing of the pile will stay unchanged, but after that, il will be very different 
+        (the pile stays the same that long at first to allow the first card to leave the pile to have been viewed 15 times, which is the minimum of views necessary for a card leave the pile)</p>
       </div>
   </div>
-    <div class="well col-sm-12">
+    <div class=" col-sm-12">
+      <br/><br/>
         <h3>After the 15th times you view the pile,  the regular flow of cards starts</h3>
-        <p class="center steps">After that, each time  you  view a pile three times, it will be updated: the top card will be removed, and another card will be added to the bottom of the pile. And the process will  get repeated, as long as there are cards in the reserve pile.<br/> 
-        <small>Every card removed from the practice pile will have been viewed a minimum of 15 times</small> 
-        See next chart for more explanations...</p>\
+        <p class="center steps">After that, each time  you  view a pile <strong>three</strong> times, it will be updated: the top card will be removed, and another card will be added to the bottom of the pile. And the process will  get repeated, as long as there are cards in the reserve pile.<br/> <br/>
+    
+        
 </div>
 </div>
 <div class="clearfix hidden-md hidden-lg"></div>
@@ -138,6 +139,7 @@
 
     
   </div>
+</div>
 
 <br/><br/><br/><br/>
 <!-- pictures of the piles -->
@@ -145,31 +147,35 @@
     <div class="row">
 
     
-        <div class="well col-sm-4">
+        <div class=" col-sm-4">
             <div class ="col-sm-12"
-        <p id="first">Pile 1</p>
-        <small>Same for 15 first view</small>
-    </div>
-        <div class="col-sm-12">
-       <%= image_tag('first.png', class: ' img-responsive') %> 
-   </div>
+               <p id="first">Pile 1</p>
+                <small>Same for 15 first view</small>
+            </div>
+            <div class="col-sm-12">
+              <%= image_tag('first.png', class: ' img-responsive') %> 
+            </div>
+          </div>
+
+       <div class=" col-sm-4">
+            <div class ="col-sm-12"
+                 <p id="second">Pile 2</p>
+                  <small>Same for 3 views<br/> Then it is updated...</small>
+            </div>
+            <div class="col-sm-12">
+                <%= image_tag('second.png', class: ' img-responsive') %> 
+            </div>
+       </div>
+    ]
+      <div class=" col-sm-4">
+            <div class ="col-sm-12"
+               <p id="third">Pile 3</p>
+                   <small>Same for 3 views <br/> Then it is updated,<br/>and so on...</small>
+            </div>
+           <div class="col-sm-12">
+              <%= image_tag('third.png', class: ' img-responsive') %> 
+          </div>
+     </div> 
+  </div>  
 </div>
-    <div class="well col-sm-4">
-            <div class ="col-sm-12"
-        <p id="second">Pile 2</p>
-        <small>Same for 3 views<br/> Then it is updated...</small>
-    </div>
-        <div class="col-sm-12">
-       <%= image_tag('second.png', class: ' img-responsive') %> 
-   </div>
-</div>
-    <div class="well col-sm-4">
-            <div class ="col-sm-12"
-        <p id="third">Pile 3</p>
-        <small>Same for 3 views <br/> Then it is updated .....<br/>and so on...</small>
-    </div>
-        <div class="col-sm-12">
-       <%= image_tag('third.png', class: ' img-responsive') %> 
-   </div>
-</div> 
-</div>   
+

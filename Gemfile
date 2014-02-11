@@ -40,7 +40,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development do
+group :development,:test do
 
  gem 'pry'
  gem 'quiet_assets'
@@ -48,11 +48,15 @@ group :development do
  gem 'meta_request'
  gem 'awesome_print'
  gem 'pry-rails'
- # gem 'dotenv-rails'
- # gem 'database_cleaner'
- # gem 'guard-rspec'
- # gem 'guard-livereload'
- # gem 'dotenv-rails'
+  gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i  
+  gem 'guard-rspec' 
+  gem 'guard-livereload'
+  gem 'dotenv-rails'
+
 
 
 end

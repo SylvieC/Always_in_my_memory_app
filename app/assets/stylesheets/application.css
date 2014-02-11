@@ -256,6 +256,7 @@ hr {
     background:#FFFDD0;
     padding-left: 30px;
     padding-right:30px;
+    padding-bottom: 50px;
 }
 .piles{
     margin: 0;
@@ -318,12 +319,12 @@ left: 60px;
     background: white;
 }
  .steps{
-    font-size: 20px;
+    font-size: 30px;
     font:italic;
  } 
 
  #first, #second, #third{
-    font-size: 50px;
+    font-size: 39px;
     text-align: center;
  }
 
@@ -356,4 +357,8 @@ left: 60px;
     background-color:#FF9900 ;
 }
 
+
+#last{
+    background: white;
+}
 
