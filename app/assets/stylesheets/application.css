@@ -319,7 +319,7 @@ left: 60px;
     background: white;
 }
  .steps{
-    font-size: 30px;
+    font-size: 25px;
     font:italic;
  } 
 
@@ -361,4 +361,6 @@ left: 60px;
 #last{
     background: white;
 }
-
+.pp4{
+    border: solid 1px;
+}
