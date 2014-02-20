@@ -55,10 +55,7 @@ group :development,:test do
   gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i  
   gem 'guard-rspec' 
   gem 'guard-livereload'
-  gem 'dotenv-rails'
-
-
-
+  
 end
 
 gem 'rails_12factor', group: :production
