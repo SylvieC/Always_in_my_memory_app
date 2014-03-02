@@ -50,10 +50,10 @@ class CardsController < ApplicationController
    
   
   def viewed_stack
-   @view = current_user.view
-   @view.value += 1
-   @view.save
-   redirect_to "/"
+     @view = current_user.view
+     @view.value += 1
+     @view.save
+     redirect_to "/"
   end
    
   def reserve
