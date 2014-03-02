@@ -15,7 +15,6 @@ AlwaysInMyMemory::Application.routes.draw do
   
    get "/users/:id/reserve", to: 'cards#reserve', as: :reserve
    post "users/:id/reserve", to: 'cards#create'
-   # post "/users/:user_id/cards/:id", to: 'cards#update'
 
    post "/practice", to: "cards#viewed_stack"
 

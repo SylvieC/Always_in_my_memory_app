@@ -19,7 +19,7 @@
 
 
 
- <% Stack.find(3).cards.each do |card| %>
+ <% @learned_stack.cards.each do |card| %>
 <div class="row down">
   <div class="col-xs-1">
     <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete %>
