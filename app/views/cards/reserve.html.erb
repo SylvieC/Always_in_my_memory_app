@@ -54,7 +54,7 @@
 
 <!-- Show the List of Cards in Reserve pile -->
 
-  <% if Stack.find(1).cards.empty? %>
+  <% if @reserve_stack.cards.empty? || @reserve_stack.cards == nil %>
   <div class="notify">
     <div class="row col-sm-4 col-sm-offset-4">
       <h4>The reserve pile is empty, please add more cards</h4>
@@ -62,7 +62,7 @@
   </div>
   <% else %>
   <div class="notify col-sm-4 col-sm-offset-4 ">
-        <p>Cards left in pile : <strong><%= Stack.find(1).cards.length %></strong> </p>
+        <p>Cards left in pile : <strong><%= @reserve_stack.cards.length %></strong> </p>
     </div>
    <% end %>
 
@@ -71,7 +71,7 @@
      <br/>
      
  <!--  show cards -->
-  <% Stack.find(1).cards.each do |card| %>
+  <% @reserve_stack.cards.reverse.each do |card| %>
 <div class="row down">
   <div class="col-xs-1">
     <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete %>

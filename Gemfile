@@ -42,12 +42,13 @@ end
 
 group :development,:test do
 
- gem 'pry'
- gem 'quiet_assets'
- gem  'binding_of_caller'
- gem 'meta_request'
- gem 'awesome_print'
- gem 'pry-rails'
+  gem 'pry'
+  gem 'quiet_assets'
+  gem 'pry-byebug'
+  gem  'binding_of_caller'
+  gem 'meta_request'
+  gem 'awesome_print'
+  gem 'pry-rails'
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'launchy'

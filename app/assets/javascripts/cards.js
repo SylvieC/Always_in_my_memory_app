@@ -1,21 +1,20 @@
-
 var length = gon.length;
 var count = 0;
 
-$(window).load(function(){
+$(window).load(function() {
   console.log("hello");
-   $(".answer").hide();
- 
-    $(".front").click(function(){
-      var cardId = $(this).data("card");
-      var t += 1
-      $("#" + cardId).show();
-   });
+  $(".answer").hide();
+
+  $(".front").click(function() {
+    var cardId = $(this).data("card");
+    var t += 1;
+    $("#" + cardId).show();
   });
+});
 
 //when last one is clicked, send a post
-//I can get the length of practice _card with a 
-//gone view
+//I got the length of practice_pile with a 
+//gon view
 $.ajax({
   type: "POST",
   url: url,

@@ -51,7 +51,7 @@
  <p><em>click on the card to see the other side</em></p>
 
 <!-- show cards -->
-<% Stack.find(2).cards.each do |card| %>
+<% @practice_stack.cards.reverse.each do |card| %>
 <div class="row">
   
   <div class="col-xs-6">
@@ -72,7 +72,7 @@
 
 <!-- if the practice pile has less than 5 cards, ask the user to add cards into the reserve pile -->
 <div class="col-sm-12">
-  <% if Stack.find(2).cards.length < 5 %>
+  <% if @practice_stack.cards.length < 5 %>
   <p> You need to add cards to your reserve pile, to make this pile have 5 cards </p>
   <% end %>
 </div>

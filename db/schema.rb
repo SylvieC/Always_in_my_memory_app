@@ -28,35 +28,15 @@ ActiveRecord::Schema.define(version: 20140206223658) do
   add_index "cards", ["stack_id"], name: "index_cards_on_stack_id", using: :btree
   add_index "cards", ["topic_id"], name: "index_cards_on_topic_id", using: :btree
 
-  create_table "categories", force: true do |t|
-    t.text "name"
-  end
-
-  create_table "product_copies", force: true do |t|
-    t.integer "product_id"
-    t.integer "description_id"
-  end
-
-  create_table "products_categories", force: true do |t|
-    t.integer "id1"
-    t.integer "id2"
-  end
-
   create_table "stacks", force: true do |t|
     t.string   "name",               default: "reserve"
     t.integer  "times_viewed_today", default: 0
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "students", force: true do |t|
-    t.string  "family_name"
-    t.string  "given_name"
-    t.integer "table_id"
-  end
-
-  create_table "tables", force: true do |t|
-  end
+  add_index "stacks", ["user_id"], name: "index_stacks_on_user_id", using: :btree
 
   create_table "topics", force: true do |t|
     t.string   "name",       default: "general"

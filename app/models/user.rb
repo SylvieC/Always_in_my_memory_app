@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   	before_save :create_remember_token
 
   has_one :view
+  has_many :stacks
 
   has_secure_password
   private

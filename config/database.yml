@@ -6,6 +6,7 @@
 development:
   adapter: postgresql
   encoding: unicode
+  database: always_in_my_memory_development
   pool: 5 
 
 # Warning: The database defined as "test" will be erased and

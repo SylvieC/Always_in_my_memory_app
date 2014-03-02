@@ -34,7 +34,7 @@
             <%= image_tag('lady_on_computer.jpeg', class: 'img-circle img-responsive imright') %>
             <br/>
             <h3>Things I'm learning<br/><span class="grey">~practice pile~</h3><br/><br/>
-             <p class="center"><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p></span><br/>
+             <p class="center"><%= link_to("Practice now", practice_path(current_user.id), :class => "btn btn-large btn-primary") %></p></span><br/>
          
             <p>The pile consisting of <strong>5</strong> cards is the pile you work on every learning session.<br> After a card has been viewed a minimum of 15 times, it it directed to the "Things I have learned" pile. It is then replaced by a new card from the "things I want learn" pile. <small>The cycle described above starts only after the initial pile has been viewed 15 times. From that time on, all the cards in the pile have been viewed 15 times. This allows the process of adding and retrieving cards to start since the first card can only be taken away after having been view 15 times.</p>
 
@@ -46,7 +46,7 @@
                 
                 <h3 class="paragraph2">Things I want to learn<br/>
                     <span class="grey">~reserve pile~</span><br/></h3><br/><br/>
-                <p class="center"><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary"  ) %></p>
+                <p class="center"><%= link_to('Go to the reserve pile', reserve_path(current_user.id), :class => "btn btn-large btn-primary"  ) %></p>
                 <p class="paragraph2">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. Copy paste or write the back and front content of what you want to learn and build your pile. The flow of cards will happen automatically</p>
                 <br/>
                 
@@ -57,7 +57,7 @@
                <br/>
               
                 <h3>Things I have learned<br/><span class="grey">~"I know it" pile~</span></h3><br/>
-                  <p class="center"><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-primary") %></p>
+                  <p class="center"><%= link_to('See what I have already learned', learned_path(current_user.id), :class => "btn btn-large btn-primary") %></p>
                   <br/>
                   <br/>
 
