@@ -23,7 +23,7 @@ class CardsController < ApplicationController
   end
 
 
-	def practice
+ def practice
       @reserve_stack = Stack.where(user_id: current_user.id, name: "reserve")[0]
       @practice_stack = Stack.where(user_id: current_user.id, name: "practice")[0]
       @learned_stack = Stack.where(user_id: current_user.id, name: "learned")[0]
