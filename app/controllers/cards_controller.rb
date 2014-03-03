@@ -35,23 +35,27 @@ class CardsController < ApplicationController
       @view = current_user.view.value
 
       # fill the practice pile with cards from the reserve pile if needed
-
-        move_the_exact_number_of_cards_needed_from_reserve_pile_to_practice_pile(current_user)
-
-      # first 15 times, the stack stays unchanged, then it changes every 3 times. 
-      if @view % 3 == 0 && @view > 14 && !(@practice_stack.cards).empty?
-          move_card_from_top_of_practice_pile_to_already_learned_pile(current_user)
-          if !(@practice_stack.cards).empty?
-              move_one_card_from_top_of_reserve_pile_to_practice_pile(current_user)
-          end
-      end
+      move_the_exact_number_of_cards_needed_from_reserve_pile_to_practice_pile(current_user)
   end
    
   
   def viewed_stack
+      @reserve_stack = Stack.where(user_id: current_user.id, name: "reserve")[0]
+      @practice_stack = Stack.where(user_id: current_user.id, name: "practice")[0]
+      @learned_stack = Stack.where(user_id: current_user.id, name: "learned")[0]
+
+      
+   
      @view = current_user.view
      @view.value += 1
      @view.save
+      # first 15 times, the stack stays unchanged, then it changes every 3 times.
+      if (@view.value % 3 == 0) && (@view.value > 14) && !(@practice_stack.cards).empty?
+        move_card_from_top_of_practice_pile_to_already_learned_pile(current_user)
+        if !(@practice_stack.cards).empty?
+            move_one_card_from_top_of_reserve_pile_to_practice_pile(current_user)
+        end
+      end
      redirect_to "/"
   end
    
