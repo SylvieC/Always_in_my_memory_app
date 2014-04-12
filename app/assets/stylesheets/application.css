@@ -14,7 +14,7 @@
 }
 
 div.front{
-  background-color: #FFD414;
+  background-color:#FFD414 ;
 }
 
 div.answer{
@@ -58,6 +58,7 @@ border-bottom-right-radius:5px;
 
 .flashcard{
   margin: 2px;
+  height:100px;
 }
 
 .top_page {
@@ -100,7 +101,7 @@ h3{
 }
 textarea{
     padding-top: 20px;
-    background:FDFDFD;
+    background:#FDFDFD;
     height:120px;
     width: 300px;
     padding-top: 20px;
@@ -247,13 +248,13 @@ hr {
     font-size:25px;
 }
 .intro-block{
-    background:#FFFDD0;
+    background:lightyellow;
     height: 100px;
 }
 .interact {
       
       margin: 0;
-    background:#FFFDD0;
+    background:lightyellow;
     padding-left: 30px;
     padding-right:30px;
     padding-bottom: 50px;
@@ -363,4 +364,21 @@ left: 60px;
 }
 .pp4{
     border: solid 1px;
+}
+body > div.interact > div.row.piles > small > div:nth-child(1) > img {
+height: 300px;
+
+border: solid;
+}
+
+
+body > div.interact > div.row.piles > div > img {
+height: 300px;
+
+border: solid;
+}
+body > div.interact > div.row.piles > small > div:nth-child(2) > img {
+height: 300px;
+border: solid;
+
 }

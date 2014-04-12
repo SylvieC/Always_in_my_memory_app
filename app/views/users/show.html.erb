@@ -39,33 +39,33 @@
         </div>
     <div class="row piles">
         <div class="col-xs-12 col-sm-4 padd">
-            <%= image_tag('lady_on_computer.jpeg', class: 'img-circle img-responsive imright') %>
+            <%= image_tag('practicepile.png', class: 'img-circle img-responsive imright') %>
             <br/>
             <h3>Things I'm learning<br/><span class="grey">~practice pile~</h3><br/><br/>
-             <p class="center"><%= link_to("Practice now", practice_path, :class => "btn btn-large btn-primary") %></p></span><br/>
+             <p class="center"><%= link_to("Practice now", practice_path, :class => "btn btn-xl btn-info") %></p></span><br/>
          
-            <p>The pile consisting of <strong>5</strong> cards is the pile you work on every learning session.<br> After a card has been viewed a minimum of 15 times, it is directed to the "Things I have learned" pile. It is then replaced by a new card from the "things I want learn" pile. <small>The cycle described above starts only after the initial pile has been viewed 15 times. From that time on, all the cards in the pile have been viewed 15 times. This allows the process of adding and retrieving cards to start since the first card can only be taken away after having been viewed 15 times.</p>
+            <p>Pile consisting of <strong>5</strong> cards with which you interact the most with.<br> Just practice by viewing the cards in this stack and the movement of cards will be automated according to the number of views.<br/>After a card is viewed 15 times, it is moved to the "already learned pile" and another card from the 'reserve' pile is added. <small>At the very beginning, when you view the first pile, it will stay unchanged during the first 15 views. From then on, every 3 viewing of the stack, the stack gets updated and the top card is taken away</p>
 
             
         </div>
         <div class="col-xs-12 col-sm-4 piles padd ">
-                <%= image_tag('pile.jpeg', class: 'img-circle img-responsive flashcard imright') %>
+                <%= image_tag('reservepile.png', class: 'img-circle img-responsive flashcard imright') %>
                 <br/><br/>
                 
                 <h3 class="paragraph2">Things I want to learn<br/>
                     <span class="grey">~reserve pile~</span><br/></h3><br/><br/>
-                <p class="center"><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary"  ) %></p>
-                <p class="paragraph2">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. Copy paste or write the back and front content of what you want to learn and build your pile. The flow of cards will happen automatically</p>
+                <p class="center"><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-warning"  ) %></p>
+                <p class="paragraph2">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. Enter there the facts you want to learn in order to build this pile </p>
                 <br/>
                 
         </div>
             
         <div class="col-xs-12 col-sm-4 piles padd">
-                <%= image_tag('pile_of_flashcards.jpeg', class: 'img-circle img-responsive imright') %>
+                <%= image_tag('learnedpile.png', class: 'img-circle img-responsive imright') %>
                <br/>
               
                 <h3>Things I have learned<br/><span class="grey">~"I know it" pile~</span></h3><br/>
-                  <p class="center"><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-primary") %></p>
+                  <p class="center"><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-info") %></p>
                   <br/>
                   <br/>
 
@@ -79,6 +79,7 @@
     <br/><br/><br/><br/>
 
 <!-- Demonstration of how it works -->
+<div class="container">
 <div id="last">
   <div class="row">
     <div class="  col-sm-12 center">
@@ -177,5 +178,6 @@
           </div>
      </div> 
   </div>  
+</div>
 </div>
 

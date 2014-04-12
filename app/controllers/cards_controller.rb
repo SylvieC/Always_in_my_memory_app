@@ -5,37 +5,46 @@ class CardsController < ApplicationController
 
   def index
       @cards = Card.all
-      if Stack.where(name: "reserve", user_id: current_user.id) == nil
+      if Stack.where(name: "reserve", user_id: current_user.id).nil?
         @reserve_stack = Stack.create(name: "reserve", times_viewed_today: 0, user_id: current_user.id)
       end
 
-      if Stack.where(name: "practice", user_id: current_user.id) == nil
+      if Stack.where(name: "practice", user_id: current_user.id).nil?
         @practice_stack = Stack.create(name: "practice", times_viewed_today: 0, user_id: current_user.id)
       end
 
-      if Stack.where(name: "learned", user_id: current_user.id) == nil
+      if Stack.where(name: "learned", user_id: current_user.id).nil?
         @learned_stack = Stack.create(name: "learned", times_viewed_today: 0, user_id: current_user.id)
       end
 
-     if  current_user.view == nil
+     if  current_user.view.nil?
         View.create(user_id: current_user.id, value: 0)
      end
   end
 
 
  def practice
-      @reserve_stack = Stack.where(user_id: current_user.id, name: "reserve")[0]
-      @practice_stack = Stack.where(user_id: current_user.id, name: "practice")[0]
-      @learned_stack = Stack.where(user_id: current_user.id, name: "learned")[0]
+      reserve_stack = Stack.where(user_id: current_user.id, name: "reserve")[0]
+      @reserve_pile = Card.where(stack_id: reserve_stack.id)
+      practice_stack = Stack.where(user_id: current_user.id, name: "practice")[0]
+      @practice_pile = Card.where(stack_id: practice_stack.id).order('id asc')
+      learned_stack = Stack.where(user_id: current_user.id, name: "learned")[0]
+      @learned_pile = Card.where(stack_id: learned_stack.id)
+   
 
-      @cards = Card.all
+      @cards 
     	@topics = Topic.all
         # make the stacks available to js via gon
-      gon.length = @practice_stack.cards.length
+      gon.length = @practice_pile.length
       @view = current_user.view.value
 
       # fill the practice pile with cards from the reserve pile if needed
       move_the_exact_number_of_cards_needed_from_reserve_pile_to_practice_pile(current_user)
+      # create an array with the cards arranged by id number and make the practice_pile be this array
+      # of cards before rendering
+
+     
+
   end
    
   
@@ -98,6 +107,7 @@ class CardsController < ApplicationController
   	card.delete
   	redirect_to reserve_path(current_user.id)
   end
+  private
 
   def  move_one_card_from_top_of_reserve_pile_to_practice_pile(user)
       @reserve_stack = Stack.where(user_id: current_user.id, name: "reserve")[0]
@@ -140,5 +150,8 @@ class CardsController < ApplicationController
       move_one_card_from_top_of_reserve_pile_to_practice_pile(user)
     end
   end
+
+
+
 end
  
