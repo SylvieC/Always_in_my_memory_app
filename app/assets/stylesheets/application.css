@@ -247,10 +247,12 @@ hr {
     color: #504A4B; 
     font-size:25px;
 }
+/*background*/
 .intro-block{
     background:lightyellow;
     height: 100px;
 }
+/*background*/
 .interact {
       
       margin: 0;
@@ -414,6 +416,10 @@ padding-top: 30px;
 body > div.interact > div.row.piles > div > p:nth-child(8) {
 margin-top: 14px;
 }
+body > div.intro-block.down > div > div > div.col-xs-3 > img {
+margin-top: 33px;
+}
+
 .paragraph{
     font-size: 20px;
 }

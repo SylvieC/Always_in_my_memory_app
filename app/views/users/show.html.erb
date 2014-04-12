@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-3">
-                <%= image_tag('person_writing.jpeg', class: 'img-circle img-responsive img1') %>
+                <%= image_tag('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTnqNPYr0FDj46fNjpMdIsfBG2fbEKIdlJxkZztwe_7P5rI1KHGvQ', class: 'img-responsive img-circle img1') %>
             </div>
             <div class="col-xs-9">
                 <h1 class="forget_me_not title">Forget me not</h1><br/><br/>
@@ -41,8 +41,8 @@
         <div class="col-xs-12 col-sm-4 padd">
             <%= image_tag('practicepile.png', class: 'img-circle img-responsive imright') %>
             <br/>
-            <h3>Things I'm learning<br/><span class="grey">~practice pile~</h3><br/><br/>
-             <p class="center"><%= link_to("Practice now", practice_path, :class => "btn btn-xl btn-info") %></p></span><br/>
+            <h3>Things I'm learning<br/><span class="grey">~Practice Pile~</h3><br/><br/>
+             <p class="center"><%= link_to("Practice now", practice_path(current_user.id), :class => "btn btn-xl btn-primary") %></p></span><br/>
          
             <p class="paragraph">Pile consisting of <strong>5</strong> cards. It is the pile you interact the most with.<br> Just practice by viewing the cards in this stack and the movement of cards will be automated according to the number of views.<br/>After a card is viewed 15 times, it is moved to the "already learned pile" and another card from the 'reserve' pile is added. <small>At the very beginning, when you view the first pile, it will stay unchanged during the first 15 views. From then on, every 3 viewing of the stack, the stack gets updated and the top card is taken away</p>
 
@@ -53,9 +53,9 @@
                 <br/><br/>
                 
                 <h3 class="paragraph2">Things I want to learn<br/>
-                    <span class="grey">~reserve pile~</span><br/></h3><br/><br/>
-                <p class="center"><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-info first"  ) %></p>
-                <p class="paragraph2 paragraph">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. Enter there the facts you want to learn in order to build this pile </p>
+                    <span class="grey">~Reserve Pile~</span><br/></h3><br/><br/>
+                <p class="center"><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary first"  ) %></p>
+                <p class="paragraph2 paragraph">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. To build this pile, enter the fact you want to learn using the form provided on the reserve page </p>
                 <br/>
                 
         </div>
@@ -64,8 +64,8 @@
                 <%= image_tag('learnedpile.png', class: 'img-circle img-responsive imright') %>
                <br/>
               
-                <h3>Things I have learned<br/><span class="grey">~"I know it" pile~</span></h3><br/>
-                  <p class="center"><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-info") %></p>
+                <h3>Things I have learned<br/><span class="grey">~"I know it" Pile~</span></h3><br/>
+                  <p class="center"><%= link_to('See what I have already learned', learned_path, :class => "btn btn-large btn-primary") %></p>
                   <br/>
                   <br/>
 

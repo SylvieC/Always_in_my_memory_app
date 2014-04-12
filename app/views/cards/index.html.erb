@@ -1,14 +1,15 @@
 
 
-	<%= render  partial: "layouts/header"%>
+  <%= render  partial: "layouts/header"%>
     <br/><br/><br/>
+
 
 
 <div class="intro-block down">
     <div class="container">
         <div class="row">
             <div class="col-xs-3">
-                <%= image_tag('person_writing.jpeg', class: 'img-circle img-responsive img1') %>
+                <%= image_tag('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTnqNPYr0FDj46fNjpMdIsfBG2fbEKIdlJxkZztwe_7P5rI1KHGvQ', class: 'img-responsive img-circle img1') %>
             </div>
             <div class="col-xs-9">
                 <h1 class="forget_me_not title">Forget me not</h1><br/><br/>
@@ -21,6 +22,7 @@
 
 
 
+
 <!-- Explaining the piles -->
 
 <div class=" interact">
@@ -28,50 +30,50 @@
 
     <div class="row">
         <div class="col-lg-12"><h2>Three piles to interact with</h2><hr></div>
-    </div>
+        </div>
     <div class="row piles">
         <div class="col-xs-12 col-sm-4 padd">
-            <%= image_tag('lady_on_computer.jpeg', class: 'img-circle img-responsive imright') %>
+            <%= image_tag('practicepile.png', class: 'img-circle img-responsive imright') %>
             <br/>
-            <h3>Things I'm learning<br/><span class="grey">~practice pile~</h3><br/><br/>
-             <p class="center"><%= link_to("Practice now", practice_path(current_user.id), :class => "btn btn-large btn-primary") %></p></span><br/>
+            <h3>Things I'm learning<br/><span class="grey">~Practice Pile~</h3><br/><br/>
+             <p class="center"><%= link_to("Practice now", practice_path(current_user.id), :class => "btn btn-xl btn-primary") %></p></span><br/>
          
-            <p>The pile consisting of <strong>5</strong> cards is the pile you work on every learning session.<br> After a card has been viewed a minimum of 15 times, it it directed to the "Things I have learned" pile. It is then replaced by a new card from the "things I want learn" pile. <small>The cycle described above starts only after the initial pile has been viewed 15 times. From that time on, all the cards in the pile have been viewed 15 times. This allows the process of adding and retrieving cards to start since the first card can only be taken away after having been view 15 times.</p>
+            <p class="paragraph">Pile consisting of <strong>5</strong> cards. It is the pile you interact the most with.<br> Just practice by viewing the cards in this stack and the movement of cards will be automated according to the number of views.<br/>After a card is viewed 15 times, it is moved to the "already learned pile" and another card from the 'reserve' pile is added. <small>At the very beginning, when you view the first pile, it will stay unchanged during the first 15 views. From then on, every 3 viewing of the stack, the stack gets updated and the top card is taken away</p>
 
             
         </div>
         <div class="col-xs-12 col-sm-4 piles padd ">
-                <%= image_tag('pile.jpeg', class: 'img-circle img-responsive flashcard imright') %>
+                <%= image_tag('reservepile.png', class: 'img-circle img-responsive flashcard imright') %>
                 <br/><br/>
                 
                 <h3 class="paragraph2">Things I want to learn<br/>
-                    <span class="grey">~reserve pile~</span><br/></h3><br/><br/>
-                <p class="center"><%= link_to('Go to the reserve pile', reserve_path(current_user.id), :class => "btn btn-large btn-primary"  ) %></p>
-                <p class="paragraph2">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. Copy paste or write the back and front content of what you want to learn and build your pile. The flow of cards will happen automatically</p>
+                    <span class="grey">~Reserve Pile~</span><br/></h3><br/><br/>
+                <p class="center"><%= link_to('Go to the reserve pile', reserve_path(current_user.id), :class => "btn btn-large btn-primary first"  ) %></p>
+                <p class="paragraph2 paragraph">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. To build this pile, enter the fact you want to learn using the form provided on the reserve page </p>
                 <br/>
                 
         </div>
             
         <div class="col-xs-12 col-sm-4 piles padd">
-                <%= image_tag('pile_of_flashcards.jpeg', class: 'img-circle img-responsive imright') %>
+                <%= image_tag('learnedpile.png', class: 'img-circle img-responsive imright') %>
                <br/>
               
-                <h3>Things I have learned<br/><span class="grey">~"I know it" pile~</span></h3><br/>
+                <h3>Things I have learned<br/><span class="grey">~"I know it" Pile~</span></h3><br/>
                   <p class="center"><%= link_to('See what I have already learned', learned_path(current_user.id), :class => "btn btn-large btn-primary") %></p>
                   <br/>
                   <br/>
 
 
-                <p>Things you have already learned. You can go to this pile and review.</p>
+                <p class="paragraph">Pile of what you have already learned. You can go to this pile and review whenever you want.</p>
                 <br/>
-                <br/><br/><br/>
              
         </div>
-        <br/>
     </div>
   </div>
+    <br/><br/><br/><br/>
 
-  <!-- Demonstration of how it works -->
+<!-- Demonstration of how it works -->
+<div class="container">
 <div id="last">
   <div class="row">
     <div class="  col-sm-12 center">
@@ -79,6 +81,7 @@
      </div>
  </div>
     
+    <div class="stepbox">
     <div class="row">
       <div class= "col-sm-12">
         <h3>Step 1</h3> <p class="center steps">Fill the reserve cards with the cards of your choice</p><br/><br/>
@@ -93,29 +96,40 @@
         <%= image_tag('reserse_pile2.png', class: ' img-responsive') %> 
        </div><br/><br/><br/>
   </div>
+</div>
 
-     
+   
     <div class="row">
+       <div class="stepbox" >
       <div class=" col-sm-12">
         <br/><br/>
         <h3>Step 2</h3><p class="center steps"> Go to the practice pile. The first 5 cards you put in the reserve pile will automatically go to the practice pile. Click on each card to see the other side, trying to memorize its content or to quiz yourself if you think you know it</p><br/><br/>
        </div>
       <div class=" col-sm-12">
          <%= image_tag('pp3.png', class: ' img-responsive') %> 
+          <br/><br/>
       </div>
+    </div>
       <div class=" col-sm-12">
         <br/><br/>
+
+        <div class="stepbox">
         <h3>Step 3</h3> <p class="center steps">Save each practice by clicking on the red "save practice" button </p>
-      </div>
       <div class="col-sm-12">
          <%= image_tag('pp4.png', class: ' img-responsive') %> 
+          <br/><br/>
       </div>
+    </div>
+    <div class="stepbox">
       <div class=" col-sm-12">
-        <br/><br/>
-      <h3>Step 4</h3> <p class="center steps">Repeat this process for 15 times, spacing the practice times. <strong>Important note</strong>: When you start, the first 15 viewing of the pile will stay unchanged, but after that, il will be very different 
+
+        <br/>
+      <h3>Step 4</h3> <p class="center steps">Repeat this process for 15 times, spacing the practice times. <strong>Important note</strong>: during the first 15 viewing of the pile, it will stay unchanged. After that initial period, the pile will <strong>always</strong> be updated after the third viewing of that pile.  
         (the pile stays the same that long at first to allow the first card to leave the pile to have been viewed 15 times, which is the minimum of views necessary for a card leave the pile)</p>
+         <br/><br/>
       </div>
   </div>
+</div>
     <div class=" col-sm-12">
       <br/><br/>
         <h3>After the 15th times you view the pile,  the regular flow of cards starts</h3>
@@ -134,33 +148,33 @@
   </div>
 </div>
 
-<br/><br/><br/><br/>
+<br/><br/>
 <!-- pictures of the piles -->
-  
+  <div class="container">
     <div class="row">
 
     
-        <div class=" col-sm-4">
+        <div class=" col-sm-4 stepbox2">
             <div class ="col-sm-12"
                <p id="first">Pile 1</p>
-                <small>Same for 15 first view</small>
+                <small>Same for 15 first view</small><br/><br/><br/>
             </div>
             <div class="col-sm-12">
               <%= image_tag('first.png', class: ' img-responsive') %> 
             </div>
           </div>
 
-       <div class=" col-sm-4">
+       <div class=" col-sm-4 stepbox2">
             <div class ="col-sm-12"
                  <p id="second">Pile 2</p>
-                  <small>Same for 3 views<br/> Then it is updated...</small>
+                  <small>Same for 3 views<br/> Then it is updated...</small><br/><br/>
             </div>
             <div class="col-sm-12">
                 <%= image_tag('second.png', class: ' img-responsive') %> 
             </div>
        </div>
-    ]
-      <div class=" col-sm-4">
+
+      <div class=" col-sm-4 stepbox2">
             <div class ="col-sm-12"
                <p id="third">Pile 3</p>
                    <small>Same for 3 views <br/> Then it is updated,<br/>and so on...</small>
@@ -171,9 +185,6 @@
      </div> 
   </div>  
 </div>
-
-
-
-
-
+</div>
+</div>
 
