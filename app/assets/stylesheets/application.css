@@ -223,7 +223,7 @@ hr {
     width: 100%;
 }
 .paragraph2{
-    margin-top:13px;
+    margin-top:3px;
   
 }
 .text-muted{
@@ -325,9 +325,11 @@ left: 60px;
  } 
 
  #first, #second, #third{
-    font-size: 39px;
+    font-size: 35px;
     text-align: center;
+    color:darkblue;
  }
+
 
  .front.one { 
     background-color:#a8a8a8;
@@ -381,4 +383,46 @@ body > div.interact > div.row.piles > small > div:nth-child(2) > img {
 height: 300px;
 border: solid;
 
+}
+.first{
+    font-size: 30px;
+}
+body > div.interact > div.row.piles > small > div:nth-child(1) > p.center > a {
+font-size: 20px;
+position: relative;
+top: -11px;
+}
+body > div.interact > div.row.piles > div > p.center > a {
+font-size: 20px;
+position: relative;
+top: -10px;
+}
+body > div.interact > div.row.piles > small > div:nth-child(2) > p.center > a {
+font-size: 20px;
+margin-top: 10px;
+}
+body > div.interact > div.row.piles > div > h3 {
+margin-top: 35px;
+margin-bottom: 3px;
+}
+body > div.interact > div.row.piles > small > div:nth-child(2) > p.center > a {
+margin-top: 20px;
+}
+body > div.interact > div.row.piles > small > div:nth-child(1) > p.paragraph2 {
+padding-top: 30px;
+}
+body > div.interact > div.row.piles > div > p:nth-child(8) {
+margin-top: 14px;
+}
+.paragraph{
+    font-size: 20px;
+}
+.stepbox{
+    border:solid;
+    margin-bottom: 30px;
+}
+.stepbox2{
+    border:solid;
+    margin-bottom: 30px;
+    height: 500px;
 }

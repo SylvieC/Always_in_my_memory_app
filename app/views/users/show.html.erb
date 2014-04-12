@@ -44,7 +44,7 @@
             <h3>Things I'm learning<br/><span class="grey">~practice pile~</h3><br/><br/>
              <p class="center"><%= link_to("Practice now", practice_path, :class => "btn btn-xl btn-info") %></p></span><br/>
          
-            <p>Pile consisting of <strong>5</strong> cards with which you interact the most with.<br> Just practice by viewing the cards in this stack and the movement of cards will be automated according to the number of views.<br/>After a card is viewed 15 times, it is moved to the "already learned pile" and another card from the 'reserve' pile is added. <small>At the very beginning, when you view the first pile, it will stay unchanged during the first 15 views. From then on, every 3 viewing of the stack, the stack gets updated and the top card is taken away</p>
+            <p class="paragraph">Pile consisting of <strong>5</strong> cards. It is the pile you interact the most with.<br> Just practice by viewing the cards in this stack and the movement of cards will be automated according to the number of views.<br/>After a card is viewed 15 times, it is moved to the "already learned pile" and another card from the 'reserve' pile is added. <small>At the very beginning, when you view the first pile, it will stay unchanged during the first 15 views. From then on, every 3 viewing of the stack, the stack gets updated and the top card is taken away</p>
 
             
         </div>
@@ -54,8 +54,8 @@
                 
                 <h3 class="paragraph2">Things I want to learn<br/>
                     <span class="grey">~reserve pile~</span><br/></h3><br/><br/>
-                <p class="center"><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-warning"  ) %></p>
-                <p class="paragraph2">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. Enter there the facts you want to learn in order to build this pile </p>
+                <p class="center"><%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-info first"  ) %></p>
+                <p class="paragraph2 paragraph">Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. Enter there the facts you want to learn in order to build this pile </p>
                 <br/>
                 
         </div>
@@ -70,7 +70,7 @@
                   <br/>
 
 
-                <p>Things you have already learned. You can go to this pile and review.</p>
+                <p class="paragraph">Pile of what you have already learned. You can go to this pile and review whenever you want.</p>
                 <br/>
              
         </div>
@@ -87,6 +87,7 @@
      </div>
  </div>
     
+    <div class="stepbox">
     <div class="row">
       <div class= "col-sm-12">
         <h3>Step 1</h3> <p class="center steps">Fill the reserve cards with the cards of your choice</p><br/><br/>
@@ -101,29 +102,40 @@
         <%= image_tag('reserse_pile2.png', class: ' img-responsive') %> 
        </div><br/><br/><br/>
   </div>
+</div>
 
-     
+   
     <div class="row">
+       <div class="stepbox" >
       <div class=" col-sm-12">
         <br/><br/>
         <h3>Step 2</h3><p class="center steps"> Go to the practice pile. The first 5 cards you put in the reserve pile will automatically go to the practice pile. Click on each card to see the other side, trying to memorize its content or to quiz yourself if you think you know it</p><br/><br/>
        </div>
       <div class=" col-sm-12">
          <%= image_tag('pp3.png', class: ' img-responsive') %> 
+          <br/><br/>
       </div>
+    </div>
       <div class=" col-sm-12">
         <br/><br/>
+
+        <div class="stepbox">
         <h3>Step 3</h3> <p class="center steps">Save each practice by clicking on the red "save practice" button </p>
-      </div>
       <div class="col-sm-12">
          <%= image_tag('pp4.png', class: ' img-responsive') %> 
+          <br/><br/>
       </div>
+    </div>
+    <div class="stepbox">
       <div class=" col-sm-12">
-        <br/><br/>
+
+        <br/>
       <h3>Step 4</h3> <p class="center steps">Repeat this process for 15 times, spacing the practice times. <strong>Important note</strong>: during the first 15 viewing of the pile, it will stay unchanged. After that initial period, the pile will <strong>always</strong> be updated after the third viewing of that pile.  
         (the pile stays the same that long at first to allow the first card to leave the pile to have been viewed 15 times, which is the minimum of views necessary for a card leave the pile)</p>
+         <br/><br/>
       </div>
   </div>
+</div>
     <div class=" col-sm-12">
       <br/><br/>
         <h3>After the 15th times you view the pile,  the regular flow of cards starts</h3>
@@ -142,33 +154,33 @@
   </div>
 </div>
 
-<br/><br/><br/><br/>
+<br/><br/>
 <!-- pictures of the piles -->
-  
+  <div class="container">
     <div class="row">
 
     
-        <div class=" col-sm-4">
+        <div class=" col-sm-4 stepbox2">
             <div class ="col-sm-12"
                <p id="first">Pile 1</p>
-                <small>Same for 15 first view</small>
+                <small>Same for 15 first view</small><br/><br/><br/>
             </div>
             <div class="col-sm-12">
               <%= image_tag('first.png', class: ' img-responsive') %> 
             </div>
           </div>
 
-       <div class=" col-sm-4">
+       <div class=" col-sm-4 stepbox2">
             <div class ="col-sm-12"
                  <p id="second">Pile 2</p>
-                  <small>Same for 3 views<br/> Then it is updated...</small>
+                  <small>Same for 3 views<br/> Then it is updated...</small><br/><br/>
             </div>
             <div class="col-sm-12">
                 <%= image_tag('second.png', class: ' img-responsive') %> 
             </div>
        </div>
-    ]
-      <div class=" col-sm-4">
+
+      <div class=" col-sm-4 stepbox2">
             <div class ="col-sm-12"
                <p id="third">Pile 3</p>
                    <small>Same for 3 views <br/> Then it is updated,<br/>and so on...</small>
@@ -178,6 +190,7 @@
           </div>
      </div> 
   </div>  
+</div>
 </div>
 </div>
 
