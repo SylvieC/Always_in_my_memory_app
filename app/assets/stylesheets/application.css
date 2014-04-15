@@ -1,17 +1,15 @@
 
-
 .img1{
     margin-top: 60px;
+    margin-right:400px;
 }
+
 
 .intro{
     margin-top: 35px;
     font-size: 30px;
 }
 
-.name{
-    color: #08298A;
-}
 
 div.front{
   background-color:#FFD414 ;
@@ -53,7 +51,7 @@ border-bottom-right-radius:5px;
 }
 .title{
   font-family: 'Artifika', serif;
-  font-size: 20px;  
+  font-size: 25px;  
 }
 
 .flashcard{
@@ -66,9 +64,9 @@ border-bottom-right-radius:5px;
 }
 
 .push_up{
-	margin:  200px;
-	background-color: white;
-	height: 200px;
+    margin:  200px;
+    background-color: white;
+    height: 200px;
 }
 .form {
     background:#F5F5F5;
@@ -122,6 +120,8 @@ h4, h1 {
 
 .down {
     margin-top: 50px;
+    margin-left:50px;
+    padding-left:80px;
 }
 .contentf{
     margin-bottom: 0px;
@@ -139,7 +139,7 @@ h4, h1 {
 
 div.frontr{
  background-color: #FFD414;
- heigth: 100px;
+ height: 100px;
 }
 
 div.backr{
@@ -222,19 +222,12 @@ hr {
     height: 350px;
     width: 100%;
 }
-.paragraph2{
-    margin-top:3px;
-  
-}
+
 .text-muted{
     color: #e9e6df;
     font-weight: 100;
 }
-.forget_me_not{
 
-    font-size: 40px;
-
-}
 
 .tpad{
     padding-top: 20px;
@@ -249,8 +242,9 @@ hr {
 }
 /*background*/
 .intro-block{
-    background:lightyellow;
+    background:rgba(0, 255, 255, 0.7);
     height: 100px;
+    
 }
 /*background*/
 .interact {
@@ -260,6 +254,7 @@ hr {
     padding-left: 30px;
     padding-right:30px;
     padding-bottom: 50px;
+  
 }
 .piles{
     margin: 0;
@@ -279,17 +274,21 @@ hr {
 .img-circle.img-responsive.imright {
 padding-right: 0;
 position: relative;
-left: 60px;
+left: 100px;
+height:170px;
+border:solid 2px;
 }
 .to-the-right{
     text-align: right;
     padding-right: 8em;
 }
 .grey{
-    color: #C0C0C0;
+    color: darkgrey;
 }
 .intro-block.down {
     margin-top: 0px;
+
+    margin-left: 0px;
     
 }
 .container.down{
@@ -298,11 +297,6 @@ left: 60px;
 }
 
 
-@media(min-width: 768px){
-.carousel-inner > .item{
-    height: 700px;   
-}
-}
 
 @media(max-width: 768px){
     .intro-block.down{
@@ -322,14 +316,17 @@ left: 60px;
     background: white;
 }
  .steps{
-    font-size: 25px;
-    font:italic;
+    font-size: 20px;
+    padding:20px;
+   
  } 
 
  #first, #second, #third{
     font-size: 35px;
     text-align: center;
-    color:darkblue;
+    font-family: 'Artifika', serif;
+
+
  }
 
 
@@ -370,24 +367,31 @@ left: 60px;
     border: solid 1px;
 }
 body > div.interact > div.row.piles > small > div:nth-child(1) > img {
-height: 300px;
+height: 150px;
+border:solid 1px;
 
-border: solid;
+
+margin-left:40px;
 }
 
 
 body > div.interact > div.row.piles > div > img {
-height: 300px;
+height: 150px;
+border:solid:1px;
 
-border: solid;
+margin-left: 45px;
 }
 body > div.interact > div.row.piles > small > div:nth-child(2) > img {
-height: 300px;
-border: solid;
+height: 150px;
+border:solid 1px;
+
+margin-left: 30px;
 
 }
 .first{
-    font-size: 30px;
+    font-size: 22px;
+    margin-left:40px;
+    
 }
 body > div.interact > div.row.piles > small > div:nth-child(1) > p.center > a {
 font-size: 20px;
@@ -422,13 +426,82 @@ margin-top: 33px;
 
 .paragraph{
     font-size: 20px;
+    padding:20px;
 }
 .stepbox{
-    border:solid;
+
     margin-bottom: 30px;
 }
 .stepbox2{
     border:solid;
     margin-bottom: 30px;
     height: 500px;
+}
+.navbar{
+    color:yellow;
+}
+
+nav{
+    font-size:20px;
+    background:darkgrey;
+    color:black;
+}
+#brand{
+    font-size:21px;
+}
+nav.li{
+    color:black;
+}
+.container{
+    margin-left:0px;
+}
+.works{
+    font-size:23px; 
+}
+.border{
+    border:solid 2px;
+}
+.border2{
+    border:solid 1px;
+}
+.form-control{
+    height: 400px;
+}
+#yellow{
+    background:rgba(0, 255, 255, 0.7);
+    border:#00FFFF;
+
+}
+.explain{
+    font-size:20px;
+}
+#yellow > div:nth-child(12) > div.col-sm-5.col-sm-offset-1 > img {
+height: 268px;
+}
+.image{
+    margin-left:20px;
+}
+.la{
+    height:570pxpx;
+}
+#purple{
+    background:red;
+}
+#blue{
+    background:darkgrey;
+}
+#coral{
+    background:coral;
+}
+#green{
+    background:aquamarine;
+}
+#blue2{
+    background:blue;
+}
+#c{
+    background:purple;
+}
+#b{
+    height:500px;
 }
