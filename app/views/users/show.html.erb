@@ -64,7 +64,7 @@
 
  <!--    how it works another try -->
   <div class="well" id="yellow"> <h2 class="center forget_me_not title">How it works - A step by step explanation </h2><hr>
-
+      <div class="container">
 
        <h3 class="center forget_me_not title">Step 1</h3><br/>
       <p class="center explain">Fill the reserve cards by entering the content of what you want to learn<br/>It is best to keep a minimum of 5 cards in the reserve pile</p><br/>
@@ -72,7 +72,7 @@
         <div class=" col-sm-5">
        <%= image_tag('reserve_pile1.png', class: ' img-responsive border2 image') %> 
     </div>
-     <div class=" col-sm-5 col-sm-offset-1">
+     <div class=" col-sm-5">
         <%= image_tag('reserse_pile2.png', class: ' img-responsive border2 image') %> 
     
     <br/><br/>
@@ -85,10 +85,10 @@
       <p class="center explain">Go to the practice pile. The first 5 cards you put in the reserve pile will automatically go to the practice pile.<br/> Click on each card to see the other side, trying to memorize its content or to quiz yourself if you think you know it<br/>Save each practice by clicking on the red "save practice" button.<br/> Go back to this pile optimally 3 times a day and keep learning.</p><br/>
         <div class="row">
         <div class=" col-sm-5">
-    <%= image_tag('pp3.png', class: ' img-responsive border2 image') %> 
+    <%= image_tag('pp3.png', class: ' img-responsive border2 image', id: 'sec') %> 
     </div>
-     <div class=" col-sm-5 col-sm-offset-1">
-        <%= image_tag('pp4.png', class: ' img-responsive border2 image') %> 
+     <div class=" col-sm-5">
+        <%= image_tag('pp4.png', class: ' img-responsive border2 image',id: "sec") %> 
     
     <br/><br/>
 
@@ -108,6 +108,7 @@
 <!-- Demonstration of how it works -->
 
     </div>
+  </div>
     
 </div>
 
