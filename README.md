@@ -6,11 +6,11 @@ This app is designed to help the user memorize things in a systematic way. The f
 
 ![Alt text](app/assets/images/frontpage.png "Landing Page")
 
-![Alt text](app/assets/images/pp4.png "The Practice Pile")
+![Alt text](app/assets/images/pp3.png "The Practice Pile")
 
 
 
- This app lives at [[http://warm-sierra-1277.herokuapp.com]]
+ This app lives at http://warm-sierra-1277.herokuapp.com
 
 Powered by:  
 * Ruby (2.0) on Rails (4) 
