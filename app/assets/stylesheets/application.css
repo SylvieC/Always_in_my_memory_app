@@ -16,7 +16,7 @@ div.front{
 }
 
 div.answer{
-    background-color: #00FFFF;
+  background:rgba(0, 255, 255, 0.7);
  }
 
 div .front, .answer {
@@ -25,7 +25,7 @@ div .front, .answer {
 box-shadow: 10px 10px 37px #000000;
 border: solid black 1px;
 border-radius: 10px;
-height: 90px;
+height:100px;
 padding: 10px;
 text-align: center;
 font-family: 'Artifika', serif;
@@ -484,24 +484,7 @@ height: 268px;
 .la{
     height:570pxpx;
 }
-#purple{
-    background:red;
-}
-#blue{
-    background:darkgrey;
-}
-#coral{
-    background:coral;
-}
-#green{
-    background:aquamarine;
-}
-#blue2{
-    background:blue;
-}
-#c{
-    background:purple;
-}
-#b{
-    height:500px;
+#indigo{
+     background:rgba(0, 255, 255, 1);
+     color:black;
 }

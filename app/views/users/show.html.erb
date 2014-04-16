@@ -39,14 +39,14 @@
             <h3>Practice Pile</h3>
             <h4>Things I'm learning</h4>
             <p>Pile consisting of <strong>5</strong> cards.</br> It is the pile you interact the most with. Just practice by viewing the cards in this stack and the movement of cards will be automated according to the number of views. After a card is viewed 15 times, it is moved to the "already learned pile" and another card from the 'reserve' pile is added.</p>
-            <p> <p ><%= link_to("Practice now", practice_path(current_user.id), :class => "btn btn-xl btn-info") %></p>
+            <p> <p ><%= link_to("Practice now", practice_path(current_user.id), :class => "btn btn-xl btn-info", :id => "indigo") %></p>
         </div>
         <div class="col-sm-12 col-md-4">
             <%= image_tag('reservepile.png', class: 'img-circle img-responsive flashcard imright') %>
             <h3>Reserve Pile</h3>
             <h4>Things I want to learn</h4>
             <p>Where you put the "cards" you want to learn. They will automatically go to the Practice pile when needed. To build this pile, enter the fact you want to learn using the form provided on the reserve page </p>
-            <p><%= link_to('Add cards', reserve_path(current_user.id), :class => "btn btn-large btn-info first"  ) %></p>
+            <p><%= link_to('Add cards', reserve_path(current_user.id), :class => "btn btn-large btn-info first", :id => "indigo"  ) %></p>
         </div>
         <div class="clearfix hidden-md hidden-lg"></div>
         <div class="col-sm-12 col-md-4">
@@ -54,7 +54,7 @@
             <h3>"I know it" Pile</h3>
             <h4>Things I have learned</h4>
             <p>Pile of what you have already learned. You can go to this pile and review whenever you want.</p>
-            <p><%= link_to('Already learned', learned_path(current_user.id), :class => "btn btn-large btn-info") %></p>
+            <p><%= link_to('Already learned', learned_path(current_user.id), :class => "btn btn-large btn-info", :id => "indigo") %></p>
         </div>
        
     </div>
@@ -116,7 +116,7 @@
        <div class="stepbox" >
       <div class=" col-sm-12">
         <br/><br/>
-        <h3>As you keep practicing, the flow of cards will be automatically regulated<br/> according to the number of times you view a card</h3><p class="center steps"> After an initial period of 15 views, the pile will always be updated after the third viewing of that pile :<br/> the top card will go to the "learned" pile and a card from the reserve pile will be added. <br/> (The 15 views of the initial pile are necessary because the first card to leave the pile needs to have been viewed a minimum of 15 times)
+        <h3 class="center forget_me_not title">As you keep practicing, the flow of cards will be automatically regulated<br/> according to the number of times you view a card</h3><p class="center steps"> After an initial period of 15 views, the pile will always be updated after the third viewing: the <br/>top card will go to the "I know it" pile and a card from the reserve pile will be added. <br/> (The 15 views of the initial pile are necessary because the first card to leave the pile needs to have been viewed a minimum of 15 times)
          </p><br/><br/>
        </div>
   
