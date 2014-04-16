@@ -475,11 +475,12 @@ nav.li{
 .explain{
     font-size:20px;
 }
+
 #yellow > div:nth-child(12) > div.col-sm-5.col-sm-offset-1 > img {
-height: 268px;
+height: 323px;
 }
 .image{
-    margin-left:20px;
+    margin-left:60px;
 }
 .la{
     height:570pxpx;
