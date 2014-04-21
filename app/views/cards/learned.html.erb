@@ -4,13 +4,13 @@
 	
 	 	<div class="row">
     <div class="row col-sm-6">
-      <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary") %></div>
+      <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-info") %></div>
      </div>
      <br/>
      <div class="row">
 
     
-          <%= link_to("Let's practice!", practice_path, :class => "btn btn-large btn-primary") %>
+          <%= link_to("Let's practice!", practice_path, :class => "btn btn-large btn-info") %>
       </div>
     </div>
 </div>
@@ -22,7 +22,7 @@
  <% @learned_stack.cards.each do |card| %>
 <div class="row down">
   <div class="col-xs-1">
-    <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete %>
+    <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete ,id: 'button'%>
   </div>
   <div class="col-xs-4">
    <div data-card="<%= card.id %>" class="frontr"><%= card.title %></div>
