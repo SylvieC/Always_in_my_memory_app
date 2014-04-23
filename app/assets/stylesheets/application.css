@@ -295,10 +295,21 @@ border:solid 2px;
     padding-top: 0px;
 
 }
+@media(max-width:900px){
+div.answer,div.backr {
+    height: 350px;
+font-size:18px;
+
+}
+div.front, div.frontr {
+height: 350px;
+font-size:18px;
+}
+
+}
 
 
-
-@media(max-width: 900px){
+@media(max-width: 792px){
     .intro-block.down{
     height:500px;
     
@@ -336,12 +347,12 @@ height: 230px;
 }
 div.answer,div.backr {
 height: 350px;
-font-size:16px;
+font-size:17px;
 
 }
 div.front, div.frontr {
 height: 350px;
-font-size:16px;
+font-size:17px;
 }
 body > div > div.container > div > div.col-md-8.quote {
 margin-top: 20px;
