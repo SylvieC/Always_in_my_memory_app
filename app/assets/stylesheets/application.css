@@ -261,7 +261,7 @@ hr {
 }
 
 .intro-block.down{
-    height: 260px;
+    height: 280px;
 }
 .imright{
     postion:relative;
@@ -300,7 +300,7 @@ border:solid 2px;
 
 @media(max-width: 768px){
     .intro-block.down{
-    height: 500px;
+    height:500px;
     
 }
   .down{
@@ -544,4 +544,26 @@ nav.li{
 }
 #step1{
     margin-left:auto;
+}
+#german{
+    font-size:18px;
+}
+#germanscientist{
+    height:320px;
+}
+@media(max-width:1200px){
+    #germanscientist{
+        height:380px;
+    }
+}
+@media(max-width:792px){
+    #germanscientist{
+        height: 735px;
+    }
+    element.style {
+}
+#germanscientist > div > div > div.col-xs-12.col-sm-9 > p {
+margin-right: 40px;
+margin-left: 10px;
+}
 }
