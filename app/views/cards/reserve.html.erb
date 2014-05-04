@@ -8,10 +8,10 @@
   <div class="container top_page">
     <div class="row">
      <div class="col-xs-6">
-    <%= link_to("Let's practice!", practice_path, :class => "btn btn-large btn-primary") %>
+    <%= link_to("Practice!", practice_path, :class => "btn btn-large btn-primary") %>
     </div>
    <div class="col-xs-6">
- <%= link_to('Already learned', learned_path, :class => "btn btn-large btn-primary") %>
+ <%= link_to('I know it', learned_path, :class => "btn btn-large btn-primary") %>
    </div>
   </div>
 </div>
@@ -27,11 +27,11 @@
   <div class="row">
     <div class="col-md-6">
       <br/>
-      <%= f.label :'front of card' %>
+      <%= f.label :'front of card' %>&nbsp
       <%= f.text_area :title %>
     </div>
     <div class="col-md-6"><br/>
-      <%= f.label :'back of card' %>:
+      <%= f.label :'back of card' %>&nbsp
       <%= f.text_area :content %><br/><br/>
     </div>
   </div>
@@ -49,12 +49,12 @@
   <div class="row">
     <div class="col-md-6">
       <br/>
-      <%= f.label :'Image from the web - front of the card' %></br>
-      Just copy paste the image url in this box
+      <%= f.label :'Image from the web - Front of the card', id: 'card_imgurl' %></br>
+        <span id="card_imgurl">Just copy paste the image url in this box </span>
       <%= f.text_area :imgurl %>
     </div>
     <div class="col-md-6"><br/>
-      <%= f.label :'back of card' %> (text):
+      <%= f.label :'back of card' %><br/>text<br/>
       
       <%= f.text_area :content %><br/><br/>
     </div>
