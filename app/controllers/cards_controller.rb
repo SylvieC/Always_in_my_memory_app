@@ -32,7 +32,7 @@ class CardsController < ApplicationController
       @learned_pile = Card.where(stack_id: learned_stack.id)
    
 
-      @cards 
+
     	@topics = Topic.all
         # make the stacks available to js via gon
       gon.length = @practice_pile.length
@@ -83,7 +83,7 @@ class CardsController < ApplicationController
    	@cards = Card.all
    	@topics = Topic.all 
    	@stack = Stack.all
-   	new_card = params.require(:card).permit(:title, :content,:user_id)
+   	new_card = params.require(:card).permit(:title, :content,:user_id, :imgurl)
     @card =  Card.create(new_card)
     @reserve_stack = Stack.where(user_id: current_user.id, name: "reserve")[0]
     @reserve_stack.cards << @card
@@ -122,8 +122,10 @@ class CardsController < ApplicationController
   def  move_card_from_top_of_practice_pile_to_already_learned_pile(user)
     @practice_stack = Stack.where(user_id: user.id, name: "practice")[0]
     @learned_stack = Stack.where(user_id: user.id, name: "learned")[0]
-    if @practice_stack.cards.length > 0
-      card_to_move = @practice_stack.cards.first
+    @practice_pile = Card.where(stack_id: @practice_stack.id).order('id asc')
+    if @practice_pile.length > 0
+      card_to_move = @practice_pile.first
+      @practice_pile.delete(card_to_move)
       @practice_stack.cards.delete(card_to_move)
       @learned_stack.cards.push(card_to_move)
     end

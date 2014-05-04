@@ -41,6 +41,30 @@
 
 </div>
 <% end %>
+<br/>
+ <h4><em>You can also use an image as the front of the card</em></h4> 
+<div class="container form">
+<%= form_for :card do |f| %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <br/>
+      <%= f.label :'Image from the web - front of the card' %></br>
+      Just copy paste the image url in this box
+      <%= f.text_area :imgurl %>
+    </div>
+    <div class="col-md-6"><br/>
+      <%= f.label :'back of card' %> (text):
+      
+      <%= f.text_area :content %><br/><br/>
+    </div>
+  </div>
+
+
+ <%= f.submit "Add card", class: "btn btn-info btn btn-md", id: "savebutton" %><br/><br/>
+
+</div>
+<% end %>
 
 
   <h1>Cards in the reserve pile</h1>
@@ -70,7 +94,12 @@
     <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete,id:'button' %>
   </div>
   <div class="col-xs-4">
+    <% if card.imgurl.nil? %>
    <div data-card="<%= card.id %>" class="frontr"><%= card.title %></div>
+    <% else %>
+    <div data-card="<%= card.id %>" class="frontr"><%= image_tag(card.imgurl, class: 'img-responsive', id: 'cardpict') %></div>
+
+    <% end %>
  </div>
 
  <div class="col-xs-5">
