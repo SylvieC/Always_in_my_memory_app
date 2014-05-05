@@ -83,7 +83,7 @@ class CardsController < ApplicationController
    	@cards = Card.all
    	@topics = Topic.all 
    	@stack = Stack.all
-   	new_card = params.require(:card).permit(:title, :content,:user_id, :imgurl)
+   	new_card = params.require(:card).permit(:title, :content,:imgurl)
     @card =  Card.create(new_card)
     @reserve_stack = Stack.where(user_id: current_user.id, name: "reserve")[0]
     @reserve_stack.cards << @card
