@@ -18,6 +18,8 @@ AlwaysInMyMemory::Application.routes.draw do
 
    post "/practice", to: "cards#viewed_stack"
 
+   
+
  end
 
 

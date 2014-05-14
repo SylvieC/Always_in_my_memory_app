@@ -1,3 +1,4 @@
+
 	<%= render partial: 'layouts/header'%>
 
 
@@ -8,13 +9,11 @@
   <div class="container top_page">
     <div class="row">
      <div class="col-xs-6">
-    <%= link_to("Practice!", practice_path, :class => "btn btn-large btn-primary") %>
-    </div>
-   <div class="col-xs-6">
- <%= link_to('I know it', learned_path, :class => "btn btn-large btn-primary") %>
-   </div>
+      <%= link_to("Practice!", practice_path, :class => "btn btn-large btn-primary") %>
+     </div>
+    <div class="col-xs-6">
+      <%= link_to('I know it', learned_path, :class => "btn btn-large btn-primary") %>
   </div>
-</div>
 <br/><br/>
 
   <!-- Forms to create 1 card  -->
@@ -22,7 +21,7 @@
 <div class="container form">
   <br/>
 
-<%= form_for :card do |f| %>
+  <%= form_for :card do |f| %>
 
   <div class="row">
     <div class="col-md-6">
