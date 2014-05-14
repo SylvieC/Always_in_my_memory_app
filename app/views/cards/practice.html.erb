@@ -3,30 +3,32 @@
 
 
   <%= form_for :practice, url: "/practice", method: "post", html: {id: "count_form"} do |f| %>
-  <% end %>Ô
-
- <!-- container -->
+  <% end %>
+ 
  <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-          <div class="col-md-12">
-            <%= link_to('Add cards', reserve_path, :class => "btn btn-large btn-primary") %>
-          </div><br/>
+        <div class="row">
+            <div class="col-md-4">
+                    <div class="col-md-12">
+                        <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary") %>
+                        
+                      </div>
+                      <br/>
   
-          <div class="col-md-12">
-             <%= link_to('I know it', learned_path, :class => "btn btn-large btn-primary ") %>
-          </div>
-        </div>
-        <div class="col-md-8 quote">
-         <blockquote>
-          <h5><em>Today's quote about education</em>
+                    <div class="col-md-12">
+                        <%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary ") %>
+                    </div>
+            </div>
+           <div class="col-md-8 quote">
+      <blockquote>
+        <h5><em>Today's quote about education</em>
           <br/>
-           <p><% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
-           <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> </p>
-         </blockquote>
-        </div>
-    </div>
- </div>
+    <p><% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
+      <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> </p>
+                   
+       </blockquote>
+         </div>
+      </div>
+</div>
  
 
 
@@ -39,30 +41,30 @@
 
 <% else %>
  <% if @view % 3 == 0 %>
-   <p class="center">A new card was just added to your pile</p>
- <% end %>
+<p class="center">A new card was just added to your pile</p>
+  <% end %>
       <p class="center"> You have viewed this pile  <%= @view % 3 %> <%= (@view % 3)<2 ? "time" : "times"%>
-<% end %>
+      
+  <% end %>
      
 <br/>
  <p><em>click on the card to see the other side</em></p>
 
 <!-- show cards -->
-<% @practice_pile.each do |card| %>
+<% @practice_stack.cards.reverse.each do |card| %>
 <div class="row">
   
   <div class="col-xs-6">
-    <% if card.imgurl.nil? %>
-      <div data-card="<%= card.id %>" class="front"><%= card.title %></div>
-    <% else %>
-      <div data-card="<%= card.id %>" class="front"><%= image_tag(card.imgurl, class: 'img-responsive', id: 'cardpictp') %></div>
-    <% end %>
-  </div>
+   <div data-card="<%= card.id %>" class="front"><%= card.title %></div>
+ </div>
 
-  <div class="col-xs-6">
+ <div class="col-xs-6">
    <div id="<%= card.id %>" class="answer"><%= card.content %></div>
-  </div>
-  <div class="clearfix hidden-md hidden-lg"></div>
+ </div>
+
+
+
+ <div class="clearfix hidden-md hidden-lg"></div>
 </div>
 <hr/>
 
@@ -74,6 +76,4 @@
   <p> You need to add cards to your reserve pile, to make this pile have 5 cards </p>
   <% end %>
 </div>
-
-<%= javascript_include_tag "cards" %>
 
