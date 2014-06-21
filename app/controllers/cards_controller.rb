@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
-	
-	 before_filter :signed_in_user, only: [:create, :index,:new, :edit, :update]
-	 
+  
+   before_filter :signed_in_user, only: [:create, :index,:new, :edit, :update]
+   
 
   def index
       @cards = Card.all
@@ -33,7 +33,7 @@ class CardsController < ApplicationController
    
 
 
-    	@topics = Topic.all
+      @topics = Topic.all
         # make the stacks available to js via gon
       gon.length = @practice_pile.length
       @view = current_user.view.value
@@ -70,20 +70,20 @@ class CardsController < ApplicationController
    
   def reserve
     @cards = Card.all
-	 	@stacks = Stack.all 
-	 	@topics = Topic.all
+    @stacks = Stack.all 
+    @topics = Topic.all
     @reserve_stack = Stack.where(user_id: current_user.id, name: "reserve")[0]
   end
 
-	def new
+  def new
     @card = Card.new
   end
 
   def create
-   	@cards = Card.all
-   	@topics = Topic.all 
-   	@stack = Stack.all
-   	new_card = params.require(:card).permit(:title, :content,:imgurl)
+    @cards = Card.all
+    @topics = Topic.all 
+    @stack = Stack.all
+    new_card = params.require(:card).permit(:title, :content,:imgurl)
     @card =  Card.create(new_card)
     @reserve_stack = Stack.where(user_id: current_user.id, name: "reserve")[0]
     @reserve_stack.cards << @card
@@ -94,18 +94,19 @@ class CardsController < ApplicationController
   end
 
   def edit
-	end
+  end
 
-	def learned
+  def learned
      @practice_stack = Stack.where(user_id: current_user.id, name: "practice")[0]
      @learned_stack = Stack.where(user_id: current_user.id, name: "learned")[0]
   end
+
     
   def destroy
     id = params[:id]
-  	card = Card.find(id)
-  	card.delete
-  	redirect_to reserve_path(current_user.id)
+    card = Card.find(id)
+    card.delete
+    redirect_to reserve_path(current_user.id)
   end
   private
 
@@ -156,4 +157,3 @@ class CardsController < ApplicationController
 
 
 end
- 

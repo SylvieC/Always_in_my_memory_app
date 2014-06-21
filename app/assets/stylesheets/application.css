@@ -9,10 +9,13 @@
     margin-top: 35px;
     font-size: 30px;
 }
+.advice{
+    padding-top:10px;
+}
 
-
-div.front{
-  background-color:rgba(255, 212, 20, 0.3) ;
+div.front{ 
+   background-color: rgba(255, 255, 153, 0.9);
+ 
 }
 
 div.answer{
@@ -34,7 +37,9 @@ padding-top: 20px;
 }
 
 .quote {
- background-color: rgba(238, 130, 238, .6);
+ /*background-color: rgba(238, 130, 238, .6);*/
+/* background-color: rgba(207, 255, 170, 1);*/
+ background-color: rgba(207, 255, 170, 1);
  border:ridge 3px #000000;
 -moz-border-radius-topleft: 5px;
 -moz-border-radius-topright:5px;
@@ -138,12 +143,12 @@ h4, h1 {
 }
 
 div.frontr{
- background-color: #FFD414;
+ background-color: rgba(255, 255, 153, 0.9);
  height: 100px;
 }
 
 div.backr{
-    background-color: #00FFFF;
+    background-color: rgba(0, 255, 255, 0.4);;
     height: 140px; 
 }
 div .frontr, .backr {

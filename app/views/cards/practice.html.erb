@@ -8,14 +8,8 @@
  <div class="container">
         <div class="row">
             <div class="col-md-4">
-                    <div class="col-md-12">
-                        <%= link_to('Go to the reserve pile', reserve_path, :class => "btn btn-large btn-primary") %>
-                        
-                      </div>
-                      <br/>
-  
-                    <div class="col-md-12">
-                        <%= link_to('What you have already learned', learned_path, :class => "btn btn-large btn-primary ") %>
+                    <div class="col-md-12 advice">
+                        Our advice: practice 3 times a day, leaving a minimum of one hour minimum in between each practice.<br/> You will never forget what you've learned.  
                     </div>
             </div>
            <div class="col-md-8 quote">
@@ -51,7 +45,7 @@
  <p><em>click on the card to see the other side</em></p>
 
 <!-- show cards -->
-<% @practice_stack.cards.reverse.each do |card| %>
+<% @practice_stack.cards.each do |card| %>
 <div class="row">
   
   <div class="col-xs-6">
