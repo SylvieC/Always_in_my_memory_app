@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -44,7 +45,6 @@ group :development,:test do
 
   gem 'pry'
   gem 'quiet_assets'
-  gem 'pry-byebug'
   gem  'binding_of_caller'
   gem 'meta_request'
   gem 'awesome_print'
