@@ -52,10 +52,10 @@
       <% if card.imgurl.nil? %>
    <div data-card="<%= card.id %>" class="front"><%= card.title %></div>
     <% else %>
-    <div data-card="<%= card.id %>" class="frontr"><%= image_tag(card.imgurl, class: 'img-responsive', id: 'cardpict') %></div>
+    <div data-card="<%= card.id %>" class="front"><%= image_tag(card.imgurl, class: 'img-responsive', id: 'cardpict') %></div>
 
     <% end %>
-  
+
  </div>
 
  <div class="col-xs-6">
