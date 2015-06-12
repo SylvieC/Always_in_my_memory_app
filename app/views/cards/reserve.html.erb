@@ -1,20 +1,12 @@
 
 	<%= render partial: 'layouts/header'%>
-
-
- <!-- Navigation to other pages -->
-
-
-  
-<br/><br/><br/><br/>
+  <br/><br/><br/><br/>
 
   <!-- Forms to create 1 card  -->
-   <h3><em>Add cards to the reserve pile</em></h3> 
-<div class="container form">
-  <br/>
-
-  <%= form_for :card do |f| %>
-
+<h3><em>Add cards to the reserve pile</em></h3> 
+<div class="container form"> <br/>
+ 
+ <%= form_for :card do |f| %>
   <div class="row">
     <div class="col-md-6">
       <br/>
@@ -26,12 +18,8 @@
       <%= f.text_area :content %><br/><br/>
     </div>
   </div>
-
-
- <%= f.submit "Add card", class: "btn btn-info btn btn-md", id: "savebutton" %><br/><br/>
-
-</div>
-<% end %>
+  <%= f.submit "Add card", class: "btn btn-info btn btn-md", id: "savebutton" %><br/><br/></div>
+ <% end %>
 <br/>
  <h3><em>You can also use an image as the front of the card</em></h3> 
 <div class="container form">
@@ -50,57 +38,45 @@
       <%= f.text_area :content %><br/><br/>
     </div>
   </div>
-
-
- <%= f.submit "Add card", class: "btn btn-info btn btn-md", id: "savebutton" %><br/><br/>
-
-</div>
+  <%= f.submit "Add card", class: "btn btn-info btn btn-md", id: "savebutton" %><br/><br/>
+ </div>
 <% end %>
 
-
-  <h1>Cards in the reserve pile</h1>
+<h1>Cards in the reserve pile</h1>
   
 <!-- Show the List of Cards in Reserve pile -->
-
-  <% if  @reserve_stack == nil || @reserve_stack.cards == nil || @reserve_stack.cards.empty? %>
+<% if @reserve_stack == nil || @reserve_stack.cards == nil || @reserve_stack.cards.empty? %>
   <div class="notify">
     <div class="row col-sm-4 col-sm-offset-4">
       <h4>The reserve pile is empty, please add more cards</h4>
     </div>
   </div>
-  <% else %>
+<% else %>
   <div class="notify col-sm-4 col-sm-offset-4 ">
-        <p>Cards left in pile : <strong><%= @reserve_stack.cards.length %></strong> </p>
-    </div>
-   <% end %>
+    <p>Cards left in pile : <strong><%= @reserve_stack.cards.length %></strong> </p>
+  </div>
+<% end %>
 
-     <div class="clearfix hidden-md hidden-lg">
-     </div>
-     <br/>
+<div class="clearfix hidden-md hidden-lg"></div><br/>
      
  <!--  show cards -->
   <% @reserve_stack.cards.reverse.each do |card| %>
-<div class="row down">
-  <div class="col-xs-1">
-    <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete,id:'button' %>
-  </div>
-  <div class="col-xs-4">
-    <% if card.imgurl.nil? %>
-   <div data-card="<%= card.id %>" class="frontr"><%= card.title %></div>
-    <% else %>
-    <div data-card="<%= card.id %>" class="frontr"><%= image_tag(card.imgurl, class: 'img-responsive', id: 'cardpict') %></div>
+    <div class="row down">
+      <div class="col-xs-1">
+        <%= button_to "delete", {controller: :cards, action: :destroy, id: card.id }, :method => :delete,id:'button' %>
+      </div>
+    <div class="col-xs-4">
+      <% if card.imgurl.nil? %>
+        <div data-card="<%= card.id %>" class="frontr"><%= card.title %></div>
+      <% else %>
+        <div data-card="<%= card.id %>" class="frontr"><%= image_tag(card.imgurl, class: 'img-responsive', id: 'cardpict') %></div>
+      <% end %>
+    </div>
 
-    <% end %>
- </div>
-
- <div class="col-xs-5">
-   <div id="<%= card.id %>" class="backr"><%= card.content %></div>
- </div>
-
-
-
- <div class="clearfix hidden-md hidden-lg"></div>
-</div>
-<hr/>
-
-<%end%>
+     <div class="col-xs-5">
+       <div id="<%= card.id %>" class="backr"><%= card.content %></div>
+     </div>
+     <div class="clearfix hidden-md hidden-lg"></div>
+     </div>
+     <hr/>
+  <%end%>

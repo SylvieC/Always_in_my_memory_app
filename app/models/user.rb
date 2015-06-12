@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   has_secure_password
   private
 
-    def create_remember_token
-        self.remember_token = SecureRandom.urlsafe_base64
-    end 
+  def create_remember_token
+    self.remember_token = SecureRandom.urlsafe_base64
+  end 
 
 end
 

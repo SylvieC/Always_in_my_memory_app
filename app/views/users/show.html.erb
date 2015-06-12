@@ -2,164 +2,124 @@
 
 <%= render  partial: "layouts/header"%>
 
-
 <% if signed_in? %>
-<div class="container down">
-   <div class="name title">Hello <%= current_user().name %></div>
-</div>
+  <div class="container down">
+    <div class="name title">Hello <%= current_user().name %></div>
+  </div>
 <% end %>
 <br/>
 
-
-
-
-     <div class="intro-block down">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-3">
-                 <%= image_tag('person_writing.jpeg', class: 'img-circle img-responsive img1') %>
-            </div>
-            <div class="col-xs-12 col-sm-9">
-              <br/>
-                <h1 class="forget_me_not title">Forget me not</h1><br/><br/>
-                <p class="first">A unique app designed to help you memorize all that you always wanted to learn </p>
-            </div>
-            </div>
-        </div>
-    </div>    
+<div class="intro-block down">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
+        <%= image_tag('person_writing.jpeg', class: 'img-circle img-responsive img1') %>
+      </div>
+      <div class="col-xs-12 col-sm-9">
+        <br/>
+        <h1 class="forget_me_not title">Forget me not</h1><br/><br/>
+        <p class="first">A unique app designed to help you memorize all that you always wanted to learn </p>
+      </div>
+    </div>
+  </div>
+</div>    
 </div>
 <!-- Exlaining the piles -->
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12 "><h2 class="forget_me_not title">Three piles to interact with</h2><hr></div>
+  <div class="row">
+    <div class="col-lg-12 "><h2 class="forget_me_not title">Three piles to interact with</h2><hr></div>
     </div>
     <div class="row">
+      <div class="col-sm-12 col-md-4">
+         <%= image_tag('practicepile.png', class: 'img-circle img-responsive imright') %>
+        <h3>Practice Pile</h3>
+        <h4>Things I'm learning</h4>
+        <p>Pile consisting of <strong>5</strong> cards at a time.</br> </p>
+        <p>It is the pile you interact with the most. Just practice by viewing the cards in this stack and these views will be automatically tracked. After a card is viewed 15 times, it is moved to the "I know it" pile and another card from the "Reserve" pile is added. <p ><%= link_to("Practice now", practice_path(current_user.id), :class => "btn btn-xl btn-info", :id => "indigo") %></p>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <%= image_tag('reservepile.png', class: 'img-circle img-responsive flashcard imright') %>
+        <h3>Reserve Pile</h3>
+        <h4>Things I want to learn</h4>
+        <p>These are the cards you want to learn. They will automatically be added to the Practice pile when needed. To build this pile, enter the facts you want to learn using the "Add card" button.</p>
+        <p><%= link_to('Add cards', reserve_path(current_user.id), :class => "btn btn-large btn-info first", :id => "indigo"  ) %></p>
+      </div>
+      <div class="clearfix hidden-md hidden-lg"></div>
         <div class="col-sm-12 col-md-4">
-             <%= image_tag('practicepile.png', class: 'img-circle img-responsive imright') %>
-            <h3>Practice Pile</h3>
-            <h4>Things I'm learning</h4>
-            <p>Pile consisting of <strong>5</strong> cards at a time.</br> </p>
-            <p>It is the pile you interact with the most. Just practice by viewing the cards in this stack and these views will be automatically tracked. After a card is viewed 15 times, it is moved to the "I know it" pile and another card from the "Reserve" pile is added. <p ><%= link_to("Practice now", practice_path(current_user.id), :class => "btn btn-xl btn-info", :id => "indigo") %></p>
+         <%= image_tag('learnedpile.png', class: 'img-circle img-responsive imright') %>
+          <h3>"I know it" Pile</h3>
+          <h4>Things I have learned</h4>
+          <p>Pile of what you have already learned. You can go to this pile and review whenever you want.</p>
+          <p><%= link_to('I know it', learned_path(current_user.id), :class => "btn btn-large btn-info", :id => "indigo") %></p>
         </div>
-        <div class="col-sm-12 col-md-4">
-            <%= image_tag('reservepile.png', class: 'img-circle img-responsive flashcard imright') %>
-            <h3>Reserve Pile</h3>
-            <h4>Things I want to learn</h4>
-            <p>These are the cards you want to learn. They will automatically be added to the Practice pile when needed. To build this pile, enter the facts you want to learn using the "Add card" button.</p>
-            <p><%= link_to('Add cards', reserve_path(current_user.id), :class => "btn btn-large btn-info first", :id => "indigo"  ) %></p>
-        </div>
-        <div class="clearfix hidden-md hidden-lg"></div>
-        <div class="col-sm-12 col-md-4">
-           <%= image_tag('learnedpile.png', class: 'img-circle img-responsive imright') %>
-            <h3>"I know it" Pile</h3>
-            <h4>Things I have learned</h4>
-            <p>Pile of what you have already learned. You can go to this pile and review whenever you want.</p>
-            <p><%= link_to('I know it', learned_path(current_user.id), :class => "btn btn-large btn-info", :id => "indigo") %></p>
-        </div>
-       
-    </div>
-</div>    
-<br/>
+      </div>
+    </div>    
+    <br/>
 
+   <div class="well" id="yellow"> <h2 class="center forget_me_not title">How it works - A step by step explanation </h2><hr>
 
- <!--    how it works another try -->
-  <div class="well" id="yellow"> <h2 class="center forget_me_not title">How it works - A step by step explanation </h2><hr>
-
-
-       <h3 class="center forget_me_not title">Step 1</h3><br/>
-      <p class="center explain">Press the "add card" button to go the reserve pile. Build the cards by entering the content you want to learn<br/>It is best to keep a minimum of 5 cards in the reserve pile.</p><br/>
+    <h3 class="center forget_me_not title">Step 1</h3><br/>
+    p class="center explain">Press the "add card" button to go the reserve pile. Build the cards by entering the content you want to learn<br/>It is best to keep a minimum of 5 cards in the reserve pile.</p><br/>
       <div class="container">
         <div class="row">
-        <div class=" col-sx-12 col-sm-6">
-       <%= image_tag('reserve_pile1.png', class: ' img-responsive border2 image') %> 
-    </div>
-     <div class=" col-xs-12 col-sm-6">
-        <%= image_tag('reserse_pile2.png', class: ' img-responsive border2 image') %> 
-    
-    <br/><br/>
-
-    </div>
+          <div class=" col-sx-12 col-sm-6">
+           <%= image_tag('reserve_pile1.png', class: ' img-responsive border2 image') %> 
+         </div>
+         <div class=" col-xs-12 col-sm-6">
+           <%= image_tag('reserse_pile2.png', class: ' img-responsive border2 image') %> <br/><br/>
+         </div>
+     </div>
   </div>
-  </div>
-
-
-       <h3 class="center forget_me_not title">Step 2</h3><br/>
+    <h3 class="center forget_me_not title">Step 2</h3><br/>
       <p class="center explain">Go to the practice pile by clicking on "Practice". The first 5 cards you put in the reserve pile will automatically go to the practice pile.<br/> Click on each card to see the other side. Memorize the contents or quiz yourself when you're ready<br/>After each practice, click on the red "Save Practice" button to save this round of card views.<br/>Optimally, review the practice pile 3 times a day, learn these facts, and keep on learning.</p><br/>
       <div class='container'>
         <div class="row">
-        <div class=" col-xs-12 col-sm-6">
-    <%= image_tag('pp3.png', class: ' img-responsive border2 image', id: "sec") %> 
-    </div>
-     <div class=" col-xs-12 col-sm-6">
-        <%= image_tag('pp4.png', class: ' img-responsive border2 image', id: "sec") %> 
-    
-    <br/><br/>
-  
+          <div class=" col-xs-12 col-sm-6">
+            <%= image_tag('pp3.png', class: ' img-responsive border2 image', id: "sec") %> 
+          </div>
+          <div class=" col-xs-12 col-sm-6">
+            <%= image_tag('pp4.png', class: ' img-responsive border2 image', id: "sec") %><br/><br/>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-
-
-
-      </div>
-
-     <!--  end of yellow div -->
-
-      
-
-
-
-<!-- Demonstration of how it works -->
-
-    </div>
-    
-</div>
-
-  
-    <div class="row">
-       <div class="stepbox" >
+   <!-- Demonstration of how it works -->
+  <div class="row">
+    <div class="stepbox" >
       <div class=" col-sm-12">
         <br/><br/>
         <h3 class="center forget_me_not title">As you keep practicing, the cards in the practice pile will automatically be updated.</h3><p class="center steps"> After 15 views of the first pile of 5, the pile will be updated every 3 views:<br/> the top card will go to the "I know it" pile and a card from the reserve pile will be added. <br/> (The 15 views of the initial pile are necessary because the first card to leave the pile needs to have been viewed a minimum of 15 times)
          </p><br/><br/>
        </div>
-  
+       <br/><br/>
 
-<br/><br/>
 <!-- last explanation -->
    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-4">
-                <div class="well la" id="yellow">
-                <p id="first">Pile 1</p>
-                  <p class="center steps">Same for the first 15 views,<br/>
-                  then, it is updated</p>
-                   <%= image_tag('first.png', class: ' img-responsive') %><br/>
-                 </div>
-                </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="well la" id="yellow">
+          <p id="first">Pile 1</p>
+          <p class="center steps">Same for the first 15 views,<br/>
+              then, it is updated</p>
+            <%= image_tag('first.png', class: ' img-responsive') %><br/>
+          </div>
+        </div>
             
-            <div class="col-xs-12 col-md-4">
-                <div class="well la" id="yellow">
-                  <p id="first">Pile 2</p>
-                  <p class="center steps">Same for 3 views,<br/> then it is updated</p> 
-                   <%= image_tag('second.png', class: ' img-responsive') %><br/>
-                </div>
-            </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="well la" id="yellow">
+            <p id="first">Pile 2</p>
+            <p class="center steps">Same for 3 views,<br/> then it is updated</p> 
+            <%= image_tag('second.png', class: ' img-responsive') %><br/>
+          </div>
+        </div>
             
-            <div class="col-xs-12 col-md-4">
-                <div class="well la" id="yellow">
-                   <p id="first">Pile 3</p>
-                  <p class="center steps">Same for 3 views,<br/> then it is updated... <p/>
-                   <%= image_tag('third.png', class: ' img-responsive') %></div>
-            </div>
-          
+        <div class="col-xs-12 col-md-4">
+          <div class="well la" id="yellow">
+            <p id="first">Pile 3</p>
+            <p class="center steps">Same for 3 views,<br/> then it is updated... <p/>
+            <%= image_tag('third.png', class: ' img-responsive') %></div>
+          </div>
         </div> 
-        </div> 
-
-        
-
- 
-
-
-
-<!-- last expanation end -->
+      </div> 

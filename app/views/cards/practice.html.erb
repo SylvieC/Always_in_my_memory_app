@@ -1,79 +1,60 @@
 <%= render partial: 'layouts/header'%><br><br>
 <div class="container down ">
-
-
   <%= form_for :practice, url: "/practice", method: "post", html: {id: "count_form"} do |f| %>
   <% end %>
  
- <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                    <div class="col-md-12 advice">
-                        Our advice: practice 3 times a day, leaving a minimum of one hour between each practice.<br/> You will never forget what you've learned.  
-                    </div>
-            </div>
-           <div class="col-md-8 quote">
-      <blockquote>
-        <h5><em>Today's quote about education</em>
-          <br/>
-    <p><% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
-      <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> </p>
-                   
-       </blockquote>
-         </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="col-md-12 advice">
+          Our advice: practice 3 times a day, leaving a minimum of one hour between each practice.<br/> You will never forget what you've learned.  
+        </div>
       </div>
-</div>
- 
-
-
-
-  
-<br/></br>
-<h1>The Practice pile</h1>
-<% if @view < 15 %>
-  <p class="center"> You have viewed this pile  <%= @view %> <%= @view <2 ? "time" : "times"%>
-
-<% else %>
- <% if @view % 3 == 0 %>
-<p class="center">A new card was just added to your pile</p>
-  <% end %>
-      <p class="center"> You have viewed this pile  <%= @view % 3 %> <%= (@view % 3)<2 ? "time" : "times"%>
-      
-  <% end %>
-     
-<br/>
- <p><em>click on the card to see the other side</em></p>
-
-<!-- show cards -->
-<% @practice_stack.cards.each do |card| %>
-<div class="row">
-  
-  <div class="col-xs-6">
-      <% if card.imgurl.nil? %>
-   <div data-card="<%= card.id %>" class="front"><%= card.title %></div>
-    <% else %>
-    <div data-card="<%= card.id %>" class="front"><%= image_tag(card.imgurl, class: 'img-responsive', id: 'cardpict') %></div>
-
+      <div class="col-md-8 quote">
+        <blockquote>
+          <h5><em>Today's quote about education</em><br/>
+          <p><% result = Net::HTTP.get(URI.parse('http://www.subfusion.net/cgi-bin/quote.pl?quote=education&number=1')) %>
+          <%= @quote = result.split('<hr><br>')[1].split('<br><br>')[0] %> </p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+  <br/></br>
+  <h1>The Practice pile</h1>
+  <% if @view < 15 %>
+    <p class="center"> You have viewed this pile  <%= @view %> <%= @view <2 ? "time" : "times"%>
+  <% else %>
+    <% if @view % 3 == 0 %>
+     <p class="center">A new card was just added to your pile</p>
     <% end %>
-
- </div>
-
- <div class="col-xs-6">
-   <div id="<%= card.id %>" class="answer"><%= card.content %></div>
- </div>
-
-
-
- <div class="clearfix hidden-md hidden-lg"></div>
-</div>
-<hr/>
-
-<%end%>
-
-<!-- if the practice pile has less than 5 cards, ask the user to add cards into the reserve pile -->
-<div class="col-sm-12">
-  <% if @practice_stack.cards.length < 5 %>
-  <p> You need to add cards to your reserve pile, to make this pile have 5 cards </p>
+        <p class="center"> You have viewed this pile  <%= @view % 3 %> <%= (@view % 3)<2 ? "time" : "times"%>
   <% end %>
-</div>
+       
+  <br/>
+   <p><em>click on the card to see the other side</em></p>
+
+  <!-- show cards -->
+  <% @practice_stack.cards.each do |card| %>
+    <div class="row">
+      <div class="col-xs-6">
+        <% if card.imgurl.nil? %>
+          <div data-card="<%= card.id %>" class="front"><%= card.title %></div>
+        <% else %>
+          <div data-card="<%= card.id %>" class="front"><%= image_tag(card.imgurl, class: 'img-responsive', id: 'cardpict') %></div>
+        <% end %>
+      </div>
+     <div class="col-xs-6">
+       <div id="<%= card.id %>" class="answer"><%= card.content %></div>
+     </div>
+     <div class="clearfix hidden-md hidden-lg"></div>
+   </div>
+    <hr/>
+  <%end%>
+
+  <!-- if the practice pile has less than 5 cards, ask the user to add cards into the reserve pile -->
+  <div class="col-sm-12">
+    <% if @practice_stack.cards.length < 5 %>
+      <p> You need to add cards to your reserve pile, to make this pile have 5 cards </p>
+    <% end %>
+  </div>
 

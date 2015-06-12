@@ -17,30 +17,16 @@
         <li><%= link_to("Practice", practice_path(current_user.id), :class => "active") %></li>
         <li><%= link_to('Add cards', reserve_path(current_user.id)) %></li>
         <li><%= link_to('I know it', learned_path(current_user.id))%></li>
-       
-
-      
       </ul>
-     
       <ul class="nav navbar-nav navbar-right">
-
-      <% if signed_in? %>
-        
-        <li><%= link_to current_user.name, current_user %></li>
-        <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-    <% else %>
-     <li><%= link_to "Sign up", signup_path %></li>
-     <li><%= link_to "Sign in", signin_path %><li>
-   <% end %>
-
-      
-      </ul>
+        <% if signed_in? %>
+          <li><%= link_to current_user.name, current_user %></li>
+          <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+        <% else %>
+         <li><%= link_to "Sign up", signup_path %></li>
+         <li><%= link_to "Sign in", signin_path %><li>
+       <% end %>
+     </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-     
-     
-
-   
-
